@@ -12,15 +12,29 @@
     // ng2-bootstrap
     'moment': 'node_modules/moment',
     'ng2-bootstrap':              'node_modules/ng2-bootstrap',
+    // Angular2-Material
+    '@angular/material': 'npm:@angular/material/bundles/material.umd.js',
   };
   // packages tells the System loader how to load when no filename and/or no extension
   var packages = {
-    'app':                        { main: 'main.js',  defaultExtension: 'js' },
-    'rxjs':                       { defaultExtension: 'js' },
-    'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
+    'app': { 
+      main: 'main.js',
+      defaultExtension: 'js'
+    },
+    'rxjs': {
+      defaultExtension: 'js'
+    },
+    //'angular2-in-memory-web-api': { main: 'index.js', defaultExtension: 'js' },
     // ng2-bootstrap
-    'ng2-bootstrap':              { format: 'cjs', main: 'bundles/ng2-bootstrap.umd.js', defaultExtension: 'js' },
-    'moment':                     { main: 'moment.js', defaultExtension: 'js' },
+    'ng2-bootstrap': { 
+      format: 'cjs',
+      main: 'bundles/ng2-bootstrap.umd.js',
+      defaultExtension: 'js'
+    },
+    'moment': {
+      main: 'moment.js',
+      defaultExtension: 'js'
+    },
   };
   var ngPackageNames = [
     'common',
@@ -40,7 +54,10 @@
   }
   // Bundled (~40 requests):
   function packUmd(pkgName) {
-    packages['@angular/'+pkgName] = { main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js' };
+    packages['@angular/'+pkgName] = {
+      //main: '/bundles/' + pkgName + '.umd.js', defaultExtension: 'js'
+      main: (pkgName !== 'material' ? 'bundles/' : '') + pkgName + '.umd.js', defaultExtension: 'js' 
+    };
   }
   // Most environments should use UMD; some (Karma) need the individual index files
   var setPackageConfig = System.packageWithIndex ? packIndex : packUmd;
