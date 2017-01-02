@@ -1,13 +1,12 @@
-import { Component }				from '@angular/core';
-import { AlertComponent }	   		from 'ng2-bootstrap/ng2-bootstrap';
-import { NgModel }					from '@angular/forms';
+import { Component }         from '@angular/core';
+import { AlertComponent }    from 'ng2-bootstrap/ng2-bootstrap';
+import { NgModel }           from '@angular/forms';
 
 @Component({
- 	moduleId: module.id,
+  moduleId: module.id,
 	selector: 'my-app',
 	templateUrl: 'app.component.html'
 })
-
 export class AppComponent {
 	public dt:Date = new Date();
 	private minDate:Date = null;

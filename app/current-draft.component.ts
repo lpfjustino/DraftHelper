@@ -17,7 +17,7 @@ export class CurrentDraftComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.championService.getChampions()
-			.subscribe(champions => {
+			.then(champions => {
 				// Iterates through the list of champions adding them to the current object
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 				});

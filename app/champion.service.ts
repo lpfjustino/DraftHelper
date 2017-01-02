@@ -4,7 +4,7 @@ import { Headers, Http } 	from '@angular/http';
 import { Champion }			from './champions/champion'
 
 import { Observable } from "RxJS/Rx";
-//import 'rxjs/add/operator/toPromise';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ChampionService {
@@ -13,18 +13,18 @@ export class ChampionService {
 
 	constructor(private http: Http) { }
 
+/*
 	getChampions(): Observable<Champion[]> {
 		return this.http.get(this.championsUrl)
-							 .map(response => response.json().data)
+						.map(response => response.json().data)
 	}
-/*
+*/
 	getChampions(): Promise<Champion[]> {
 		return this.http.get(this.championsUrl)
 							 .toPromise()
 							 .then(response => response.json().data as Champion[])
 							 .catch(this.handleError);
 	}
-*/
 	private handleError(error: any): Promise<any> {
 		console.error('An error occurred', error); // for demo purposes only
 		return Promise.reject(error.message || error);
