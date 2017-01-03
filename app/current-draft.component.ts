@@ -46,7 +46,7 @@ export class CurrentDraftComponent implements OnInit {
 			.then(champions => {
 				// Iterates through the list of champions adding them to the current object
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
-				});
+			});
 	};
 
 	team_1_bans: any[] = [
@@ -91,12 +91,10 @@ export class CurrentDraftComponent implements OnInit {
 
 	selected(id: number) {
 		var index = this.currentState.toString();
-		alert(index);
 		this.draft[index] = this.getChampion(id);
 	}
 
 	setCurrentState(state: DraftState) {
-		alert(state);
 		this.currentState = state;
 	}
 
