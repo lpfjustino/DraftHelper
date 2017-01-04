@@ -14,8 +14,18 @@ import { CurrentDraftComponent }	from '../current-draft.component'
 export class ChampionListComponent implements OnInit {
 	champions: Champion[] = [];
 
+	currentVersion: string = "";
+	champImgBaseURL: string = "";
+
 	//constructor(private championService: ChampionService) { }
 	constructor(private championService: ChampionService, private currentDraft: CurrentDraftComponent) {
+		this.championService.getVersion()
+					.then(ver => {
+						this.currentVersion = ver;
+						this.champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/"
+							+ this.currentVersion +"/img/champion/";
+					})
+					.catch(err => console.log(err));
 	}
 
 	ngOnInit(): void {

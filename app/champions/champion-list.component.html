@@ -1,6 +1,6 @@
-<h2>My Champions</h2>
-<ul class="champions" *ngIf="champions">
-	<li *ngFor="let champion of champions">
-		<span class="badge" (click) = "selected(champion.id)">{{champion.id}}</span> {{champion.name}}
-	</li>
-</ul>
+<md-grid-list cols="15" *ngIf="champions" [style.background]="'lightblue'">
+	<md-grid-tile *ngFor="let champion of champions">
+		<img *ngIf="champion.image.full" src="{{champImgBaseURL + champion.image.full}}"
+		  			class="champ_tile" id="{{champion}}_tile" (click) = "selected(champion.id)">
+	</md-grid-tile>
+</md-grid-list>

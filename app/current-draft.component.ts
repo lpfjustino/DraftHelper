@@ -28,7 +28,7 @@ export class CurrentDraftComponent implements OnInit {
 	draft: {};
 
 	currentVersion: string = "";
-	champImgBaseURL = "";
+	champImgBaseURL: string = "";
 
 	mytest: Champion;
 
