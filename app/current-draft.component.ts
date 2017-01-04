@@ -1,7 +1,9 @@
-import { Component, OnInit, Optional } 		from '@angular/core';
+import { Component, OnInit } 		from '@angular/core';
 
 import { Champion } 				from './champions/champion';
 import { ChampionService } 			from './champion.service';
+
+import { ChampionListComponent }	from './champions/champion-list.component';
 
 import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 
@@ -24,7 +26,9 @@ export class CurrentDraftComponent implements OnInit {
 	champions: Champion[] = [];
 	currentState: DraftState = this.states.T1B1;
 	draft: {};
-	champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/5.2.1/img/champion/";
+
+	currentVersion: string = "";
+	champImgBaseURL = "";
 
 	mytest: Champion;
 
@@ -39,6 +43,16 @@ export class CurrentDraftComponent implements OnInit {
 		for(var state in this.states) {
 			this.draft[state.valueOf()] = undefined;
 		}
+
+		this.championService.getVersion()
+							.then(ver => {
+								this.currentVersion = ver;
+								this.champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/"
+									+ this.currentVersion +"/img/champion/";
+							})
+							.catch(err => console.log(err));
+
+		
 	}
 
 	ngOnInit(): void {
@@ -89,16 +103,7 @@ export class CurrentDraftComponent implements OnInit {
 		alert(this.champImgBaseURL + this.draft[this.currentState].image.full)
 	}
 
-	selected(id: number) {
-		var index = this.currentState.toString();
-		this.draft[index] = this.getChampion(id);
-	}
-
 	setCurrentState(state: DraftState) {
 		this.currentState = state;
-	}
-
-	getChampion(id: number) : Champion {
-		return this.champions.filter(champ => champ.id == id)[0];
 	}
 }

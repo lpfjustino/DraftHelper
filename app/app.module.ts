@@ -7,6 +7,7 @@ import { MaterialModule } 					from '@angular/material';
 
 import { AppComponent } 					from './app.component';
 import { CurrentDraftComponent } 			from './current-draft.component';
+import { ChampionListComponent } 			from './champions/champion-list.component';
 
 import { ChampionService }					from './champion.service';
 
@@ -16,6 +17,7 @@ import { ChampionService }					from './champion.service';
 	declarations: [
 		AppComponent,
 		CurrentDraftComponent,
+		ChampionListComponent
 	],
 	imports: [
 		BrowserModule,

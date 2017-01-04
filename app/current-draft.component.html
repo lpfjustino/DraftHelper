@@ -4,44 +4,44 @@
 			<div class="col-md-1 col-xs-2 ban" id="team_1_ban_1_div" (click) = "setCurrentState(states.T1B1)">
 		  		<img *ngIf="draft[states.T1B1]" [src]="champImgBaseURL + draft[states.T1B1].image.full"
 		  			class="img-circle" id="team_1_ban_1">
-		  		<img *ngIf="!draft[states.T1B1]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1B1]" src="resources/blue_team_ban.png" class="img-circle">
 			</div> <!-- team_1_ban_1_div -->
 			<div class="col-md-1 col-xs-2 ban" id="team_1_ban_2_div" (click) = "setCurrentState(states.T1B2)">
 		  		<img *ngIf="draft[states.T1B2]" [src]="champImgBaseURL + draft[states.T1B2].image.full"
 		  			class="img-circle" id="team_1_ban_2">
-		  		<img *ngIf="!draft[states.T1B2]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1B2]" src="resources/blue_team_ban.png" class="img-circle">
 			</div> <!-- team_1_ban_2_div -->
 			<div class="col-md-1 col-xs-2 ban" id="team_1_ban_3_div" (click) = "setCurrentState(states.T1B3)">
 		  		<img *ngIf="draft[states.T1B3]" [src]="champImgBaseURL + draft[states.T1B3].image.full"
 		  			class="img-circle" id="team_1_ban_3">
-		  		<img *ngIf="!draft[states.T1B3]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1B3]" src="resources/blue_team_ban.png" class="img-circle">
 			</div> <!-- team_1_ban_3_div -->
 		</div>
 		<div class="row" id="team_1_picks">
 			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_1_div" (click) = "setCurrentState(states.T1P1)">
 		  		<img *ngIf="draft[states.T1P1]" [src]="champImgBaseURL + draft[states.T1P1].image.full"
 		  			class="img-circle" id="team_1_pick_1">
-		  		<img *ngIf="!draft[states.T1P1]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1P1]" src="resources/blue_team_pick.png" class="img-circle">
 			</div> <!-- team_1_pick_1_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_2_div" (click) = "setCurrentState(states.T1P2)">
 		  		<img *ngIf="draft[states.T1P2]" [src]="champImgBaseURL + draft[states.T1P2].image.full"
 		  			class="img-circle" id="team_1_pick_2">
-		  		<img *ngIf="!draft[states.T1P2]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1P2]" src="resources/blue_team_pick.png" class="img-circle">
 			</div> <!-- team_1_pick_2_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_3_div" (click) = "setCurrentState(states.T1P3)">
 		  		<img *ngIf="draft[states.T1P3]" [src]="champImgBaseURL + draft[states.T1P3].image.full"
 		  			class="img-circle" id="team_1_pick_3">
-		  		<img *ngIf="!draft[states.T1P3]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1P3]" src="resources/blue_team_pick.png" class="img-circle">
 			</div> <!-- team_1_pick_3_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_4_div" (click) = "setCurrentState(states.T1P4)">
 		  		<img *ngIf="draft[states.T1P4]" [src]="champImgBaseURL + draft[states.T1P4].image.full"
 		  			class="img-circle" id="team_1_pick_4">
-		  		<img *ngIf="!draft[states.T1P4]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1P4]" src="resources/blue_team_pick.png" class="img-circle">
 			</div> <!-- team_1_pick_4_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_5_div" (click) = "setCurrentState(states.T1P5)">
 		  		<img *ngIf="draft[states.T1P5]" [src]="champImgBaseURL + draft[states.T1P5].image.full"
 		  			class="img-circle" id="team_1_pick_5">
-		  		<img *ngIf="!draft[states.T1P5]" src="resources/blue_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T1P5]" src="resources/blue_team_pick.png" class="img-circle">
 			</div> <!-- team_1_pick_5_div -->
 		</div> <!-- team_1_picks -->
 	</div> <!-- team_1_draft -->
@@ -51,55 +51,51 @@
 			<div class="col-md-1 col-xs-2 ban" id="team_2_ban_1_div" (click) = "setCurrentState(states.T2B1)">
 		  		<img *ngIf="draft[states.T2B1]" [src]="champImgBaseURL + draft[states.T2B1].image.full"
 		  			class="img-circle" id="team_2_ban_1">
-		  		<img *ngIf="!draft[states.T2B1]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2B1]" src="resources/red_team_ban.png" class="img-circle">
 			</div> <!-- team_2_ban_1_div -->
 			<div class="col-md-1 col-xs-2 ban" id="team_2_ban_2_div" (click) = "setCurrentState(states.T2B2)">
 		  		<img *ngIf="draft[states.T2B2]" [src]="champImgBaseURL + draft[states.T2B2].image.full"
 		  			class="img-circle" id="team_2_ban_2">
-		  		<img *ngIf="!draft[states.T2B2]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2B2]" src="resources/red_team_ban.png" class="img-circle">
 			</div> <!-- team_2_ban_2_div -->
 			<div class="col-md-1 col-xs-2 ban" id="team_2_ban_3_div" (click) = "setCurrentState(states.T2B3)">
 		  		<img *ngIf="draft[states.T2B3]" [src]="champImgBaseURL + draft[states.T2B3].image.full"
 		  			class="img-circle" id="team_2_ban_3">
-		  		<img *ngIf="!draft[states.T2B3]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2B3]" src="resources/red_team_ban.png" class="img-circle">
 			</div> <!-- team_2_ban_3_div -->
 		</div>
 		<div class="row" id="team_2_picks">
 			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_1_div" (click) = "setCurrentState(states.T2P1)">
 		  		<img *ngIf="draft[states.T2P1]" [src]="champImgBaseURL + draft[states.T2P1].image.full"
 		  			class="img-circle" id="team_2_pick_1">
-		  		<img *ngIf="!draft[states.T2P1]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2P1]" src="resources/red_team_pick.png" class="img-circle">
 			</div> <!-- team_2_pick_1_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_2_div" (click) = "setCurrentState(states.T2P2)">
 		  		<img *ngIf="draft[states.T2P2]" [src]="champImgBaseURL + draft[states.T2P2].image.full"
 		  			class="img-circle" id="team_2_pick_2">
-		  		<img *ngIf="!draft[states.T2P2]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2P2]" src="resources/red_team_pick.png" class="img-circle">
 			</div> <!-- team_2_pick_2_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_3_div" (click) = "setCurrentState(states.T2P3)">
 		  		<img *ngIf="draft[states.T2P3]" [src]="champImgBaseURL + draft[states.T2P3].image.full"
 		  			class="img-circle" id="team_2_pick_3">
-		  		<img *ngIf="!draft[states.T2P3]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2P3]" src="resources/red_team_pick.png" class="img-circle">
 			</div> <!-- team_2_pick_3_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_4_div" (click) = "setCurrentState(states.T2P4)">
 		  		<img *ngIf="draft[states.T2P4]" [src]="champImgBaseURL + draft[states.T2P4].image.full"
 		  			class="img-circle" id="team_2_pick_4">
-		  		<img *ngIf="!draft[states.T2P4]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2P4]" src="resources/red_team_pick.png" class="img-circle">
 			</div> <!-- team_2_pick_4_div -->
 			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_5_div" (click) = "setCurrentState(states.T2P5)">
 		  		<img *ngIf="draft[states.T2P5]" [src]="champImgBaseURL + draft[states.T2P5].image.full"
 		  			class="img-circle" id="team_2_pick_5">
-		  		<img *ngIf="!draft[states.T2P5]" src="resources/red_team_empty.png" class="img-circle">
+		  		<img *ngIf="!draft[states.T2P5]" src="resources/red_team_pick.png" class="img-circle">
 			</div> <!-- team_2_pick_5_div -->
 		</div> <!-- team_2_picks -->
 	</div> <!-- team_2_draft -->
-</div>
+</div> <!-- container -->
 
-<h2>My Champions</h2>
-<ul class="champions" *ngIf="champions">
-	<li *ngFor="let champion of champions">
-		<span class="badge" (click) = "selected(champion.id)">{{champion.id}}</span> {{champion.name}}
-	</li>
-</ul>
+<champion-list></champion-list>
+
 
 
 <md-toolbar color="primary">

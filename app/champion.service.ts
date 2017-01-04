@@ -11,14 +11,16 @@ export class ChampionService {
 	private championsUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';	// URL to web api
 	private headers = new Headers({'Content-Type': 'application/json'});
 
-	constructor(private http: Http) { }
+	private champions: Champion[] = [];
 
-/*
-	getChampions(): Observable<Champion[]> {
-		return this.http.get(this.championsUrl)
-						.map(response => response.json().data)
+	constructor(private http: Http) { 
+		this.getChampions()
+			.then(champions => {
+				// Iterates through the list of champions adding them to the current object
+				Object.keys(champions).map(key => this.champions.push(champions[key]))
+			});
 	}
-*/
+
 	getChampions(): Promise<Champion[]> {
 		return this.http.get(this.championsUrl)
 							 .toPromise()
@@ -30,15 +32,18 @@ export class ChampionService {
 		return Promise.reject(error.message || error);
 	}
 
-/*
-	getHero(id: number): Promise<Hero> {
-		const url = `${this.heroesUrl}/${id}`;
-		return this.http.get(url)
-			.toPromise()
-			.then(response => response.json().data as Hero)
-			.catch(this.handleError);
+	getChampion(id: number) : Champion {
+		return this.champions.filter(champ => champ.id == id)[0];
 	}
 
+	getVersion() : Promise<string> {
+			return this.http.get(this.championsUrl)
+							 .toPromise()
+							 .then(response => response.json().version)
+							 .catch(this.handleError);
+	}
+
+/*
 	update(hero: Hero): Promise<Hero> {
 		const url = `${this.heroesUrl}/${hero.id}`;
 		return this.http

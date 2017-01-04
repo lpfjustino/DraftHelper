@@ -1,0 +1,6 @@
+<h2>My Champions</h2>
+<ul class="champions" *ngIf="champions">
+	<li *ngFor="let champion of champions">
+		<span class="badge" (click) = "selected(champion.id)">{{champion.id}}</span> {{champion.name}}
+	</li>
+</ul>
