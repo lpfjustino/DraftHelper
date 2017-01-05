@@ -1,10 +1,11 @@
 import { Component }				from '@angular/core';
-import { AlertComponent }			from 'ng2-bootstrap/ng2-bootstrap';
 import { NgModel }					from '@angular/forms';
 
 import { GlobalVariable } 			from './global';
 
-import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
+import {MdDialog,
+	MdDialogRef,
+	MdSnackBar} 					from '@angular/material';
 
 @Component({
 	moduleId: module.id,

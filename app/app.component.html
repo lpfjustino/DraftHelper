@@ -1,16 +1,25 @@
 <md-toolbar color="primary">
-	<button class="app-icon-button" (click)="sidenav.toggle()">
+	<button class="app-icon-button" (click)="leftsidenav.toggle()">
 		<i class="material-icons app-toolbar-menu">menu</i>
 	</button>
 	{{appName}}
 
 	<span class="app-toolbar-filler"></span>
 	<button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+
+	<button class="app-icon-button" (click)="rightsidenav.toggle()">
+		<i class="material-icons app-toolbar-auth">account_circle</i>
+	</button>
 </md-toolbar>
 
+
 <md-sidenav-layout [class.m2app-dark]="isDarkTheme">
-	<md-sidenav #sidenav mode="side" class="app-sidenav">
-		Sidenav
+	<md-sidenav #leftsidenav mode="side" class="app-sidenav" align="start">
+		TODO
+	</md-sidenav>
+
+	<md-sidenav #rightsidenav mode="side" class="app-sidenav" align="end" id="user-sidenav">
+		<auth></auth>
 	</md-sidenav>
 
 	<current-draft></current-draft>

@@ -13,6 +13,7 @@
 		'moment':								'node_modules/moment',
 		'ng2-bootstrap':						'node_modules/ng2-bootstrap',
 		'@angular/material':					'node_modules/@angular/material/bundles/',
+		'@angular/http/testing': 				'node_modules/@angular/http/bundles/http-testing.umd.js',
 	};
 	// packages tells the System loader how to load when no filename and/or no extension
 	var packages = {

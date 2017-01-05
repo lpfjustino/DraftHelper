@@ -36,7 +36,8 @@ export class ChampionListComponent implements OnInit {
 			.then(champions => {
 				// Iterates through the list of champions adding them to the current object
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
-			});
+			})
+			.catch(err => console.log(err));
 	};
 
 	selected(id: number) {

@@ -1,4 +1,16 @@
 /*
+    MINE
+*/
+
+#app-toolbar-auth, #app-icon-button {
+  height: 100%;
+}
+
+md-sidenav {
+  width: 25%;
+}
+
+/*
     M2 DEMO
 */
 md-sidenav-layout.m2app-dark {
