@@ -8,8 +8,8 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ChampionService {
-	private championsUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';	// URL to web api
 	private headers = new Headers({'Content-Type': 'application/json'});
+	private championsUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';	// URL to web api
 
 	private champions: Champion[] = [];
 
@@ -19,6 +19,7 @@ export class ChampionService {
 				// Iterates through the list of champions adding them to the current object
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
+		// TODO: trocar a versão do championsurl
 	}
 
 	getChampions(): Promise<Champion[]> {

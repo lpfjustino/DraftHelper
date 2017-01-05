@@ -3,8 +3,17 @@
 */
 
 img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+md-grid-tile-footer {
+  height: 25%;
+  font-size: 12px;
+}
+
+.champion-tile {
+  cursor: pointer;
 }
 
 /*

@@ -1,0 +1,266 @@
+<div class="container-fluid">
+	<div id="team_1_draft">
+		<div class="row" id="team_1_bans">
+			<div class="col-md-1 col-xs-2 ban" id="team_1_ban_1_div" (click) = "setCurrentState(states.T1B1)">
+		  		<img *ngIf="draft[states.T1B1]" [src]="champImgBaseURL + draft[states.T1B1].image.full"
+		  			class="img-circle" id="team_1_ban_1">
+		  		<img *ngIf="!draft[states.T1B1]" src="resources/blue_team_ban.png" class="img-circle">
+			</div> <!-- team_1_ban_1_div -->
+			<div class="col-md-1 col-xs-2 ban" id="team_1_ban_2_div" (click) = "setCurrentState(states.T1B2)">
+		  		<img *ngIf="draft[states.T1B2]" [src]="champImgBaseURL + draft[states.T1B2].image.full"
+		  			class="img-circle" id="team_1_ban_2">
+		  		<img *ngIf="!draft[states.T1B2]" src="resources/blue_team_ban.png" class="img-circle">
+			</div> <!-- team_1_ban_2_div -->
+			<div class="col-md-1 col-xs-2 ban" id="team_1_ban_3_div" (click) = "setCurrentState(states.T1B3)">
+		  		<img *ngIf="draft[states.T1B3]" [src]="champImgBaseURL + draft[states.T1B3].image.full"
+		  			class="img-circle" id="team_1_ban_3">
+		  		<img *ngIf="!draft[states.T1B3]" src="resources/blue_team_ban.png" class="img-circle">
+			</div> <!-- team_1_ban_3_div -->
+		</div>
+		<div class="row" id="team_1_picks">
+			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_1_div" (click) = "setCurrentState(states.T1P1)">
+		  		<img *ngIf="draft[states.T1P1]" [src]="champImgBaseURL + draft[states.T1P1].image.full"
+		  			class="img-circle" id="team_1_pick_1">
+		  		<img *ngIf="!draft[states.T1P1]" src="resources/blue_team_pick.png" class="img-circle">
+			</div> <!-- team_1_pick_1_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_2_div" (click) = "setCurrentState(states.T1P2)">
+		  		<img *ngIf="draft[states.T1P2]" [src]="champImgBaseURL + draft[states.T1P2].image.full"
+		  			class="img-circle" id="team_1_pick_2">
+		  		<img *ngIf="!draft[states.T1P2]" src="resources/blue_team_pick.png" class="img-circle">
+			</div> <!-- team_1_pick_2_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_3_div" (click) = "setCurrentState(states.T1P3)">
+		  		<img *ngIf="draft[states.T1P3]" [src]="champImgBaseURL + draft[states.T1P3].image.full"
+		  			class="img-circle" id="team_1_pick_3">
+		  		<img *ngIf="!draft[states.T1P3]" src="resources/blue_team_pick.png" class="img-circle">
+			</div> <!-- team_1_pick_3_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_4_div" (click) = "setCurrentState(states.T1P4)">
+		  		<img *ngIf="draft[states.T1P4]" [src]="champImgBaseURL + draft[states.T1P4].image.full"
+		  			class="img-circle" id="team_1_pick_4">
+		  		<img *ngIf="!draft[states.T1P4]" src="resources/blue_team_pick.png" class="img-circle">
+			</div> <!-- team_1_pick_4_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_1_pick_5_div" (click) = "setCurrentState(states.T1P5)">
+		  		<img *ngIf="draft[states.T1P5]" [src]="champImgBaseURL + draft[states.T1P5].image.full"
+		  			class="img-circle" id="team_1_pick_5">
+		  		<img *ngIf="!draft[states.T1P5]" src="resources/blue_team_pick.png" class="img-circle">
+			</div> <!-- team_1_pick_5_div -->
+		</div> <!-- team_1_picks -->
+	</div> <!-- team_1_draft -->
+
+	<div id="team_2_draft">
+		<div class="row" id="team_2_bans">
+			<div class="col-md-1 col-xs-2 ban" id="team_2_ban_1_div" (click) = "setCurrentState(states.T2B1)">
+		  		<img *ngIf="draft[states.T2B1]" [src]="champImgBaseURL + draft[states.T2B1].image.full"
+		  			class="img-circle" id="team_2_ban_1">
+		  		<img *ngIf="!draft[states.T2B1]" src="resources/red_team_ban.png" class="img-circle">
+			</div> <!-- team_2_ban_1_div -->
+			<div class="col-md-1 col-xs-2 ban" id="team_2_ban_2_div" (click) = "setCurrentState(states.T2B2)">
+		  		<img *ngIf="draft[states.T2B2]" [src]="champImgBaseURL + draft[states.T2B2].image.full"
+		  			class="img-circle" id="team_2_ban_2">
+		  		<img *ngIf="!draft[states.T2B2]" src="resources/red_team_ban.png" class="img-circle">
+			</div> <!-- team_2_ban_2_div -->
+			<div class="col-md-1 col-xs-2 ban" id="team_2_ban_3_div" (click) = "setCurrentState(states.T2B3)">
+		  		<img *ngIf="draft[states.T2B3]" [src]="champImgBaseURL + draft[states.T2B3].image.full"
+		  			class="img-circle" id="team_2_ban_3">
+		  		<img *ngIf="!draft[states.T2B3]" src="resources/red_team_ban.png" class="img-circle">
+			</div> <!-- team_2_ban_3_div -->
+		</div>
+		<div class="row" id="team_2_picks">
+			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_1_div" (click) = "setCurrentState(states.T2P1)">
+		  		<img *ngIf="draft[states.T2P1]" [src]="champImgBaseURL + draft[states.T2P1].image.full"
+		  			class="img-circle" id="team_2_pick_1">
+		  		<img *ngIf="!draft[states.T2P1]" src="resources/red_team_pick.png" class="img-circle">
+			</div> <!-- team_2_pick_1_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_2_div" (click) = "setCurrentState(states.T2P2)">
+		  		<img *ngIf="draft[states.T2P2]" [src]="champImgBaseURL + draft[states.T2P2].image.full"
+		  			class="img-circle" id="team_2_pick_2">
+		  		<img *ngIf="!draft[states.T2P2]" src="resources/red_team_pick.png" class="img-circle">
+			</div> <!-- team_2_pick_2_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_3_div" (click) = "setCurrentState(states.T2P3)">
+		  		<img *ngIf="draft[states.T2P3]" [src]="champImgBaseURL + draft[states.T2P3].image.full"
+		  			class="img-circle" id="team_2_pick_3">
+		  		<img *ngIf="!draft[states.T2P3]" src="resources/red_team_pick.png" class="img-circle">
+			</div> <!-- team_2_pick_3_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_4_div" (click) = "setCurrentState(states.T2P4)">
+		  		<img *ngIf="draft[states.T2P4]" [src]="champImgBaseURL + draft[states.T2P4].image.full"
+		  			class="img-circle" id="team_2_pick_4">
+		  		<img *ngIf="!draft[states.T2P4]" src="resources/red_team_pick.png" class="img-circle">
+			</div> <!-- team_2_pick_4_div -->
+			<div class="col-md-1 col-xs-2 pick" id="team_2_pick_5_div" (click) = "setCurrentState(states.T2P5)">
+		  		<img *ngIf="draft[states.T2P5]" [src]="champImgBaseURL + draft[states.T2P5].image.full"
+		  			class="img-circle" id="team_2_pick_5">
+		  		<img *ngIf="!draft[states.T2P5]" src="resources/red_team_pick.png" class="img-circle">
+			</div> <!-- team_2_pick_5_div -->
+		</div> <!-- team_2_picks -->
+	</div> <!-- team_2_draft -->
+</div> <!-- container -->
+
+<champion-list></champion-list>
+
+
+
+<md-toolbar color="primary">
+	Angular Material 2 App
+</md-toolbar>
+
+<div style="padding: 7px">
+	<button md-button (click) = "testing()">Basic Button</button>
+	<button md-raised-button>Raised Button</button>
+
+	<md-slide-toggle>Slide Toggle</md-slide-toggle>
+	
+	<!-- Optional Version Output -->
+	<hr>
+	<p *ngIf="version | async" style="color: #333">
+			Using Angular Material 
+		(SHA {{ (version | async)?.commit.message.split(" ")[0] }}) from 
+		{{ (version | async)?.commit.author.date | date: 'short' }}
+	</p>
+
+</div>
+
+<md-card>
+	 <md-card-title-group>
+			<img md-card-sm-image src="path/to/img.png">
+			<md-card-title>Card with title</md-card-title>
+			<md-card-subtitle>Subtitle</md-card-subtitle>
+	 </md-card-title-group>
+</md-card>
+
+<!-- ........................................ -->
+
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
+
+	<md-sidenav #sidenav mode="side" class="app-sidenav">
+		Sidenav
+	</md-sidenav>
+
+	<md-toolbar color="primary">
+		<button class="app-icon-button" (click)="sidenav.toggle()">
+			<i class="material-icons app-toolbar-menu">menu</i>
+		</button>
+
+		Angular Material2 Example App
+
+		<span class="app-toolbar-filler"></span>
+		<button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+	</md-toolbar>
+
+	<div class="app-content">
+
+		<md-card>
+			<button md-button>FLAT</button>
+			<button md-raised-button md-tooltip="This is a tooltip!">RAISED</button>
+			<button md-raised-button color="primary">PRIMARY RAISED</button>
+			<button md-raised-button color="accent">ACCENT RAISED</button>
+		</md-card>
+
+		<md-card>
+			<md-checkbox>Unchecked</md-checkbox>
+			<md-checkbox [checked]="true">Checked</md-checkbox>
+			<md-checkbox [indeterminate]="true">Indeterminate</md-checkbox>
+			<md-checkbox [disabled]="true">Disabled</md-checkbox>
+		</md-card>
+
+		<md-card>
+			<md-radio-button name="symbol">Alpha</md-radio-button>
+			<md-radio-button name="symbol">Beta</md-radio-button>
+			<md-radio-button name="symbol" disabled>Gamma</md-radio-button>
+		</md-card>
+
+		<md-card class="app-input-section">
+			<md-input placeholder="First name"></md-input>
+
+			<md-input #nickname placeholder="Nickname" maxlength="50">
+				<md-hint align="end">
+					{{nickname.characterCount}} / 50
+				</md-hint>
+			</md-input>
+
+			<md-input>
+				<md-placeholder>
+					<i class="material-icons app-input-icon">android</i> Favorite phone
+				</md-placeholder>
+			</md-input>
+
+			<md-input placeholder="Motorcycle model">
+				<span md-prefix>
+					<i class="material-icons app-input-icon">motorcycle</i>
+					&nbsp;
+				</span>
+			</md-input>
+		</md-card>
+
+		<md-card>
+			<md-list class="app-list">
+				<md-list-item *ngFor="let food of foods">
+					<h3 md-line>{{food.name}}</h3>
+					<p md-line class="demo-secondary-text">{{food.rating}}</p>
+				</md-list-item>
+			</md-list>
+		</md-card>
+
+		<md-card>
+			<md-spinner class="app-spinner"></md-spinner>
+			<md-spinner color="accent" class="app-spinner"></md-spinner>
+		</md-card>
+
+		<md-card>
+			<label>
+				Indeterminate progress-bar
+				<md-progress-bar
+						class="app-progress"
+						mode="indeterminate"
+						aria-label="Indeterminate progress-bar example"></md-progress-bar>
+			</label>
+
+			<label>
+				Determinate progress bar - {{progress}}%
+				<md-progress-bar
+						class="app-progress"
+						color="accent"
+						mode="determinate"
+						[value]="progress"
+						aria-label="Determinate progress-bar example"></md-progress-bar>
+			</label>
+		</md-card>
+
+		<md-card>
+			<md-tab-group>
+				<md-tab label="Earth">
+					<p>EARTH</p>
+				</md-tab>
+				<md-tab label="Fire">
+					<p>FIRE</p>
+				</md-tab>
+			</md-tab-group>
+		</md-card>
+
+		<md-card>
+			<md-icon>build</md-icon>
+		</md-card>
+
+		<md-card>
+			<button md-button [md-menu-trigger-for]="menu">
+				MENU
+			</button>
+		</md-card>
+
+		<md-menu #menu="mdMenu">
+			<button md-menu-item>Lemon</button>
+			<button md-menu-item>Lime</button>
+			<button md-menu-item>Banana</button>
+		</md-menu>
+
+		<md-card>
+			<p>Last dialog result: {{lastDialogResult}}</p>
+			<button md-raised-button (click)="openDialog()">DIALOG</button>
+			<button md-raised-button (click)="showSnackbar()">SNACKBAR</button>
+		</md-card>
+
+	</div>
+
+</md-sidenav-layout>
+
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+	<button md-fab><md-icon>check circle</md-icon></button>
+</span>

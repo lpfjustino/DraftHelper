@@ -1,21 +1,4 @@
 /*
-    MINE
-*/
-
-img {
-    width: 100%;
-    height: 100%;
-}
-
-div .select {
-  cursor: pointer;
-}
-
-md-sidenav {
-  width: 25%;
-}
-
-/*
     M2 DEMO
 */
 md-sidenav-layout.m2app-dark {

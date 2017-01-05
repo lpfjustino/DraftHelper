@@ -1,11 +1,10 @@
+import { Injectable } 				from '@angular/core';
 import { Component, OnInit } 		from '@angular/core';
 
 import { Champion } 				from './champions/champion';
 import { ChampionService } 			from './champion.service';
 
 import { ChampionListComponent }	from './champions/champion-list.component';
-
-import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 
 export enum DraftState { T1B1, T1B2, T1B3, T1P1, T1P2, T1P3, T1P4, T1P5,
 	T2B1, T2B2, T2B3, T2P1, T2P2, T2P3, T2P4, T2P5
@@ -19,12 +18,11 @@ export enum DraftState { T1B1, T1B2, T1B3, T1P1, T1P2, T1P3, T1P4, T1P5,
 })
 
 export class CurrentDraftComponent implements OnInit {
-
 	// Keeps the reference of DraftState enum
 	states = DraftState;
 
-	champions: Champion[] = [];
-	currentState: DraftState = this.states.T1B1;
+	champions: Champion[];
+	currentState: DraftState;
 	draft: {};
 
 	currentVersion: string = "";
@@ -32,18 +30,17 @@ export class CurrentDraftComponent implements OnInit {
 
 	mytest: Champion;
 
-	//constructor(private championService: ChampionService) { }
-	constructor(private championService: ChampionService, private _dialog: MdDialog, private _snackbar: MdSnackBar) {
-		// Update the value for the progress-bar on an interval.
-		setInterval(() => {
-			this.progress = (this.progress + Math.floor(Math.random() * 4) + 1) % 100;
-		}, 200);
-
+	constructor(private championService: ChampionService) {
 		this.draft = [{}];
+		this.champions = [];
+		this.currentState = this.states.T1B1;
+
+		// Sets every ban and pick as undefined
 		for(var state in this.states) {
-			this.draft[state.valueOf()] = undefined;
+			this.draft[state] = undefined;
 		}
 
+		// Gathers from champions .json the current version
 		this.championService.getVersion()
 							.then(ver => {
 								this.currentVersion = ver;
@@ -51,59 +48,40 @@ export class CurrentDraftComponent implements OnInit {
 									+ this.currentVersion +"/img/champion/";
 							})
 							.catch(err => console.log(err));
-
-		
 	}
 
 	ngOnInit(): void {
+		// Iterates through the list of champions adding them to the current object
 		this.championService.getChampions()
 			.then(champions => {
-				// Iterates through the list of champions adding them to the current object
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
 	};
 
-	team_1_bans: any[] = [
-		{text: 'One', cols: 1, rows: 1, color: 'lightblue'},
-		{text: 'Two', cols: 1, rows: 1, color: 'lightgreen'},
-		{text: 'Three', cols: 1, rows: 1, color: 'lightpink'},
-	];
-
-	team_1_picks: any[] = [
-		{text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-		{text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-		{text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-		{text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-		{text: 'Four', cols: 1, rows: 1, color: '#DDBDF1'},
-	];
-
-	isDarkTheme: boolean = false;
-	lastDialogResult: string;
-
-	foods: any[] = [
-		{name: 'Pizza', rating: 'Excellent'},
-		{name: 'Burritos', rating: 'Great'},
-		{name: 'French fries', rating: 'Pretty good'},
-	];
-
-	progress: number = 0;
-
-	showSnackbar() {
-		this._snackbar.open('YUM SNACKS', 'CHEW');
+	getStateFromDefinition(team : number, nr: number, isBan: boolean) {
+		var stateName;
+		if(isBan) stateName = "T" + team + "B" + nr;
+		else stateName = "T" + team + "P" + nr;
+		return DraftState[stateName];
 	}
 
-	testing() {
-		//this.currentState = DraftState.T1B1;
-		console.log(this.draft);
-		alert(this.states);
-		alert(this.currentState);
-		alert(this.draft[this.currentState]);
-		this.mytest = this.draft[this.currentState];
-		alert(this.champImgBaseURL + this.mytest.image.full)
-		alert(this.champImgBaseURL + this.draft[this.currentState].image.full)
-	}
-
-	setCurrentState(state: DraftState) {
+	setCurrentState(team : number, nr: number, isBan: boolean) {
+		var state = this.getStateFromDefinition(team, nr, isBan);
 		this.currentState = state;
+		console.log(this.currentState);
+	}
+
+	isRoleFulfilled(team : number, nr: number, isBan: boolean) : boolean {
+		var state = this.getStateFromDefinition(team, nr, isBan);
+		return this.draft[state] != undefined;
+	}
+
+	getChampionOnRoleURL(team : number, nr: number, isBan: boolean) {
+		var state = this.getStateFromDefinition(team, nr, isBan);
+		return this.champImgBaseURL + this.draft[state].image.full;
+	}
+
+	championSelected(champ : Champion) {
+		this.draft[this.currentState] = champ;
 	}
 }

@@ -2,7 +2,10 @@ import { Component, OnInit } 		from '@angular/core';
 
 import { Champion } 				from './champion';
 import { ChampionService } 			from '../champion.service';
-import { CurrentDraftComponent }	from '../current-draft.component'
+
+import { CurrentDraftComponent }	from '../current-draft.component';
+
+import { Inject }					from '@angular/core';
 
 @Component({
 	moduleId: module.id,
@@ -13,12 +16,11 @@ import { CurrentDraftComponent }	from '../current-draft.component'
 
 export class ChampionListComponent implements OnInit {
 	champions: Champion[] = [];
-
 	currentVersion: string = "";
 	champImgBaseURL: string = "";
 
-	//constructor(private championService: ChampionService) { }
-	constructor(private championService: ChampionService, private currentDraft: CurrentDraftComponent) {
+	constructor(private championService: ChampionService, private currentDraft : CurrentDraftComponent) {
+		// Gathers from champions .json the current version
 		this.championService.getVersion()
 					.then(ver => {
 						this.currentVersion = ver;
@@ -29,6 +31,7 @@ export class ChampionListComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
+		// Iterates through the list of champions adding them to the current object
 		this.championService.getChampions()
 			.then(champions => {
 				// Iterates through the list of champions adding them to the current object
@@ -37,7 +40,7 @@ export class ChampionListComponent implements OnInit {
 	};
 
 	selected(id: number) {
-		var index = this.currentDraft.currentState.toString();
-		this.currentDraft.draft[index] = this.championService.getChampion(id);
+		var champ = this.championService.getChampion(id);
+		this.currentDraft.championSelected(champ);
 	}
 }
