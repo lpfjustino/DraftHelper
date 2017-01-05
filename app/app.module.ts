@@ -25,7 +25,7 @@ import { ChampionService }					from './champion.service';
 		HttpModule,
 		AlertModule.forRoot(),
 		DatepickerModule.forRoot(),
-		MaterialModule.forRoot()
+		MaterialModule.forRoot(),
 	],
 	providers: [
 		ChampionService

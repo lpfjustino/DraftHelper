@@ -2,9 +2,9 @@ import { Component }				from '@angular/core';
 import { AlertComponent }			from 'ng2-bootstrap/ng2-bootstrap';
 import { NgModel }					from '@angular/forms';
 
-import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
+import { GlobalVariable } 			from './global';
 
-import { CurrentDraftComponent }		from './current-draft.component'
+import {MdDialog, MdDialogRef, MdSnackBar} from '@angular/material';
 
 @Component({
 	moduleId: module.id,
@@ -13,6 +13,7 @@ import { CurrentDraftComponent }		from './current-draft.component'
 	styleUrls: ['app.component.css']
 })
 export class AppComponent {
+	appName: string = GlobalVariable.APP_NAME;
 	isDarkTheme: boolean = false;
 	lastDialogResult: string;
 

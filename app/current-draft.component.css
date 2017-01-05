@@ -15,6 +15,10 @@ md-sidenav {
   width: 25%;
 }
 
+#draft-container {
+  margin: 20px;
+}
+
 /*
     M2 DEMO
 */

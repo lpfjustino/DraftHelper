@@ -9,11 +9,15 @@ img {
 
 md-grid-tile-footer {
   height: 25%;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .champion-tile {
   cursor: pointer;
+}
+
+#champion-grid {
+  margin: 20px;
 }
 
 /*

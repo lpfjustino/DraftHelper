@@ -68,7 +68,6 @@ export class CurrentDraftComponent implements OnInit {
 	setCurrentState(team : number, nr: number, isBan: boolean) {
 		var state = this.getStateFromDefinition(team, nr, isBan);
 		this.currentState = state;
-		console.log(this.currentState);
 	}
 
 	isRoleFulfilled(team : number, nr: number, isBan: boolean) : boolean {
@@ -79,6 +78,16 @@ export class CurrentDraftComponent implements OnInit {
 	getChampionOnRoleURL(team : number, nr: number, isBan: boolean) {
 		var state = this.getStateFromDefinition(team, nr, isBan);
 		return this.champImgBaseURL + this.draft[state].image.full;
+	}
+
+	getPlaceholderURL(team : number, isBan: boolean) {
+		if(isBan) {
+			if(team == 1) return "resources/blue_team_ban.png";
+			else return "resources/red_team_ban.png"
+		} else {
+			if(team == 1) return "resources/blue_team_pick.png";
+			else return "resources/red_team_pick.png"
+		}
 	}
 
 	championSelected(champ : Champion) {
