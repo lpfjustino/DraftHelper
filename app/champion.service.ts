@@ -6,6 +6,8 @@ import { Champion }			from './champions/champion'
 import { Observable } from "RxJS/Rx";
 import 'rxjs/add/operator/toPromise';
 
+import { URLSearchParams } 	from '@angular/http';
+
 @Injectable()
 export class ChampionService {
 	private headers = new Headers({'Content-Type': 'application/json'});
@@ -20,6 +22,7 @@ export class ChampionService {
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
 		// TODO: trocar a versão do championsurl
+		this.crawl();
 	}
 
 	getChampions(): Promise<Champion[]> {
@@ -42,6 +45,15 @@ export class ChampionService {
 							 .toPromise()
 							 .then(response => response.json().version)
 							 .catch(this.handleError);
+	}
+
+	crawl() {
+		var test;
+		var search = new URLSearchParams();
+		var myheaders = new Headers({'Content-Type': 'text/html'});
+		
+		this.http.get("http://champion.gg/", {headers:myheaders}).toPromise().then(res => test = res.headers);
+		console.log(test);
 	}
 
 /*

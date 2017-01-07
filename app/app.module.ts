@@ -62,10 +62,10 @@ import { RegisterComponent } 				from './auth/register/index';
         UserService,
 
         // Providers used to create fake backend
+        /*
         fakeBackendProvider,
         MockBackend,
         BaseRequestOptions,
-        /*
 		*/
 	],
 	bootstrap: [ AppComponent ]
