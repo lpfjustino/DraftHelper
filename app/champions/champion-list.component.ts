@@ -1,9 +1,9 @@
 import { Component, OnInit } 		from '@angular/core';
 
 import { Champion } 				from './champion';
-import { ChampionService } 			from '../champion.service';
+import { ChampionService } 			from './champion.service';
 
-import { CurrentDraftComponent }	from '../current-draft.component';
+import { CurrentDraftComponent }	from '../draft/current-draft.component';
 
 import { Inject }					from '@angular/core';
 

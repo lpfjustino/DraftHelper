@@ -1,0 +1,25 @@
+<div class="container-fluid" id="draft-container">
+	<div *ngFor="let team_nr of [1, 2]" [attr.id]="'team_'+team_nr+'_draft'" class="team-draft">
+		<div class="row bans" [attr.id]="'team_'+team_nr+'_bans'">
+
+			<div *ngFor="let ban_nr of [1, 2, 3]" class="col-md-4 col-xs-4 ban" [attr.id]="'team_'+team_nr+'_ban_'+ban_nr+'_div'" (click)="setCurrentState(team_nr, ban_nr, true)">
+		  		<img *ngIf="isRoleFulfilled(team_nr, ban_nr, true)" [src]="getChampionOnRoleURL(team_nr, ban_nr, true)"
+		  			class="img-circle" [attr.id]="'team_'+team_nr+'_ban_'+ban_nr">
+		  		<img *ngIf="!isRoleFulfilled(team_nr, ban_nr, true)" [src]="getPlaceholderURL(team_nr, true)" class="img-circle">
+			</div> <!-- team_team_nr_ban_ban_nr_div -->
+
+		</div> <!-- team_team_nr_bans -->
+		<div class="row picks" [attr.id]="'team_'+team_nr+'_picks'">
+
+			<div *ngFor="let pick_nr of [1, 2, 3, 4, 5]" class="row pick" [attr.id]="'team_'+team_nr+'_pick_'+pick_nr+'_div'" (click) = "setCurrentState(team_nr, pick_nr, false)">
+				<md-card class="pick-card">
+			  		<img *ngIf="isRoleFulfilled(team_nr, pick_nr, false)" [src]="getChampionOnRoleURL(team_nr, pick_nr, false)"
+			  			class="img-circle select" [attr.id]="'team_'+team_nr+'_pick_'+pick_nr+'_div'">
+			  		<img *ngIf="!isRoleFulfilled(team_nr, pick_nr, false)" [src]="getPlaceholderURL(team_nr, false)" class="img-circle select">
+				</md-card>
+			</div> <!-- team_team_nr_pick_pick_nr_div -->
+
+		</div> <!-- team_team_nr_picks -->
+	</div> <!-- team_team_nr_draft -->
+</div> <!-- container -->
+<champion-list id="champ-list"></champion-list>

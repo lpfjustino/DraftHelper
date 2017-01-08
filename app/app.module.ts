@@ -6,11 +6,11 @@ import { HttpModule } 						from '@angular/http';
 import { MaterialModule } 					from '@angular/material';
 
 import { AppComponent } 					from './app.component';
-import { CurrentDraftComponent } 			from './current-draft.component';
+import { CurrentDraftComponent } 			from './draft/current-draft.component';
 import { ChampionListComponent } 			from './champions/champion-list.component';
 import { AuthComponent } 					from './auth/auth.component';
 
-import { ChampionService }					from './champion.service';
+import { ChampionService }					from './champions/champion.service';
 
 // Authentication imports
 // Used to create fake backend

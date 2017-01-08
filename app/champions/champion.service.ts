@@ -1,7 +1,7 @@
 import { Injectable } 		from '@angular/core';
 import { Headers, Http } 	from '@angular/http';
 
-import { Champion }			from './champions/champion'
+import { Champion }			from './champion'
 
 import { Observable } from "RxJS/Rx";
 import 'rxjs/add/operator/toPromise';
@@ -53,7 +53,6 @@ export class ChampionService {
 		var myheaders = new Headers({'Content-Type': 'text/html'});
 		
 		this.http.get("http://champion.gg/", {headers:myheaders}).toPromise().then(res => test = res.headers);
-		console.log(test);
 	}
 
 /*

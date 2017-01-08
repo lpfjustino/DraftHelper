@@ -1,10 +1,10 @@
 import { Injectable } 				from '@angular/core';
 import { Component, OnInit } 		from '@angular/core';
 
-import { Champion } 				from './champions/champion';
-import { ChampionService } 			from './champion.service';
+import { Champion } 				from '../champions/champion';
+import { ChampionService } 			from '../champions/champion.service';
 
-import { ChampionListComponent }	from './champions/champion-list.component';
+import { ChampionListComponent }	from '../champions/champion-list.component';
 
 export enum DraftState { T1B1, T1B2, T1B3, T1P1, T1P2, T1P3, T1P4, T1P5,
 	T2B1, T2B2, T2B3, T2P1, T2P2, T2P3, T2P4, T2P5
