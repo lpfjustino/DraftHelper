@@ -3,7 +3,7 @@ import { Component, OnInit } 		from '@angular/core';
 import { Champion } 				from './champion';
 import { ChampionService } 			from './champion.service';
 
-import { CurrentDraftComponent }	from '../draft/current-draft.component';
+import { DraftService }				from '../draft/draft.service';
 
 import { Inject }					from '@angular/core';
 
@@ -19,7 +19,7 @@ export class ChampionListComponent implements OnInit {
 	currentVersion: string = "";
 	champImgBaseURL: string = "";
 
-	constructor(private championService: ChampionService, private currentDraft : CurrentDraftComponent) {
+	constructor(private championService: ChampionService, private draftService : DraftService) {
 		// Gathers from champions .json the current version
 		this.championService.getVersion()
 					.then(ver => {
@@ -41,7 +41,6 @@ export class ChampionListComponent implements OnInit {
 	};
 
 	selected(id: number) {
-		var champ = this.championService.getChampion(id);
-		this.currentDraft.championSelected(champ);
+		this.draftService.selected(id);
 	}
 }

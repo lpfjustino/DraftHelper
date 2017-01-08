@@ -22,7 +22,7 @@ export class ChampionService {
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
 		// TODO: trocar a versão do championsurl
-		this.crawl();
+		//this.crawl();
 	}
 
 	getChampions(): Promise<Champion[]> {
