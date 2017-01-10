@@ -42,10 +42,10 @@ def crawlChampsPage(champRole):
         champStatsJSON = search("matchupData.championData = {};", champStats)[0]
 
         # Write role playrate and stats to 2 different files
-        filename = elem[0] + "_" + elem[1] + "rpr.json"
+        filename = elem[0] + "_" + elem[1] + "_rpr.json"
         with open(filename + "", 'w') as f:
             f.write(rolePlayRateJSON)
-        filename = elem[0] + "_" + elem[1] + "cs.json"
+        filename = elem[0] + "_" + elem[1] + "_cs.json"
         with open(filename, 'w') as f:
             f.write(champStatsJSON)
 
