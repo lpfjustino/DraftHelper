@@ -1,12 +1,9 @@
 import { Injectable } 		from '@angular/core';
-import { Headers, Http } 	from '@angular/http';
 
-import { Champion }			from './champion'
+import { Champion }			from '../../champions/champion'
 
 import { Observable } from "RxJS/Rx";
 import 'rxjs/add/operator/toPromise';
-
-import { URLSearchParams } 	from '@angular/http';
 
 @Injectable()
 export class ChampionService {
@@ -22,6 +19,7 @@ export class ChampionService {
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
 		// TODO: trocar a versão do championsurl
+		//this.crawl();
 	}
 
 	getChampions(): Promise<Champion[]> {

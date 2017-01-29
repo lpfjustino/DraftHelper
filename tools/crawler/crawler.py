@@ -1,8 +1,18 @@
-import urllib2, sys
+# Dynamic import to support cross compatibility between Python 2 and 3
+
+try:
+    import urllib.request as urllib2
+except ImportError:
+    import urllib2
+
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
+import sys, os
 from bs4 import BeautifulSoup
 from parse import *
-from StringIO import StringIO
-import urllib2
 import json
 
 def getChampionRole():
@@ -28,6 +38,13 @@ def getChampionRole():
     return champRole
 
 def crawlChampsPage(champRole):
+    # Try to create the directory if needed
+    dirName = 'stats'
+    try:
+        os.mkdir(dirName)
+    except FileExistsError:
+        print("Directory already exists. Crawling:")
+
     # For every champ in every role it's played
     for elem in champRole:
         site= "http://champion.gg/champion/"+elem[0]+"/"+elem[1]
@@ -42,11 +59,11 @@ def crawlChampsPage(champRole):
         champStatsJSON = search("matchupData.championData = {};", champStats)[0]
 
         # Write role playrate and stats to 2 different files
-        filename = elem[0] + "_" + elem[1] + "_rpr.json"
-        with open(filename + "", 'w') as f:
+        filename = elem[0] + "_" + elem[1] + "_RPR.json"
+        with open(dirName + "/" + filename, 'w') as f:
             f.write(rolePlayRateJSON)
-        filename = elem[0] + "_" + elem[1] + "_cs.json"
-        with open(filename, 'w') as f:
+        filename = elem[0] + "_" + elem[1] + "_CS.json"
+        with open(dirName + "/" + filename, 'w') as f:
             f.write(champStatsJSON)
 
 '''
