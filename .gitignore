@@ -36,3 +36,6 @@ typings
 
 # Mongo content
 data/
+
+# Statistics
+tools/crawler/stats
