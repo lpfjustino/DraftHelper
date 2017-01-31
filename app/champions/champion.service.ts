@@ -1,48 +1,66 @@
 import { Injectable } 		from '@angular/core';
 import { Headers, Http } 	from '@angular/http';
 
-import { Champion }			from './champion'
+import { Champion }			from './champion';
 
-import { Observable } from "RxJS/Rx";
-import 'rxjs/add/operator/toPromise';
+import { VersionService }	from '../services/version.service';
+
+//import 'rxjs/add/operator/map';
+
+import 'rxjs/Rx';
+import { Observable } 		from "rxjs/Observable";
 
 import { URLSearchParams } 	from '@angular/http';
 
 @Injectable()
 export class ChampionService {
 	private headers = new Headers({'Content-Type': 'application/json'});
-	private championsUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';	// URL to web api
+	private championsUrl = '';
+	private currentVersion = '';
 
 	private champions: Champion[] = [];
 
-	constructor(private http: Http) { 
+	constructor(private http: Http, private versionService: VersionService) {
+		Promise.all([this.versionService.getVersion(), this.getChampions()]).then(a => {
+			console.log(a);
+		})
+
+		this.getChampions().subscribe(champions => {
+			// Iterates through the list of champions adding them to the current object
+			Object.keys(champions).map(key => this.champions.push(champions[key]));
+			console.log(this.champions);
+			
+		});
+		/*
 		this.getChampions()
 			.then(champions => {
 				// Iterates through the list of champions adding them to the current object
-				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
+		*/
 		// TODO: trocar a versão do championsurl
 	}
 
-	getChampions(): Promise<Champion[]> {
-		return this.http.get(this.championsUrl)
-							 .toPromise()
-							 .then(response => response.json().data as Champion[])
-							 .catch(this.handleError);
+	getChampions(): Observable<Champion[]> {
+		return this.versionService.getVersion()
+							.map(ver => {
+								this.currentVersion = ver;
+								return this.currentVersion
+							})
+							.flatMap(ver => {
+								this.championsUrl = 'http://ddragon.leagueoflegends.com/cdn/'
+													+ ver
+													+ '/data/en_US/champion.json';
+								return this.http.get(this.championsUrl)
+											.map(response => response.json().data as Champion[])
+							})
 	}
-	private handleError(error: any): Promise<any> {
+	
+	private handleError(error: any): Observable<any> {
 		console.error('An error occurred', error); // for demo purposes only
-		return Promise.reject(error.message || error);
+		return Observable.throw(error.message || error);
 	}
 
 	getChampion(id: number) : Champion {
 		return this.champions.filter(champ => champ.id == id)[0];
-	}
-
-	getVersion() : Promise<string> {
-			return this.http.get(this.championsUrl)
-							 .toPromise()
-							 .then(response => response.json().version)
-							 .catch(this.handleError);
 	}
 }

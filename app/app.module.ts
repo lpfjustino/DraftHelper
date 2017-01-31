@@ -12,6 +12,7 @@ import { AuthComponent } 					from './auth/auth.component';
 
 import { ChampionService }					from './champions/champion.service';
 import { DraftService }						from './draft/draft.service';
+import { VersionService }					from './services/version.service';
 
 // Authentication imports
 // Used to create fake backend
@@ -56,6 +57,7 @@ import { RegisterComponent } 				from './auth/register/index';
 	providers: [
 		ChampionService,
 		DraftService,
+		VersionService,
 		
 		// Authentication providers
         AuthGuard,

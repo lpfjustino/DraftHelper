@@ -7,6 +7,7 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class ChampionService {
+	/*
 	private headers = new Headers({'Content-Type': 'application/json'});
 	private championsUrl = 'http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion.json';	// URL to web api
 
@@ -43,4 +44,5 @@ export class ChampionService {
 							 .then(response => response.json().version)
 							 .catch(this.handleError);
 	}
+	*/
 }

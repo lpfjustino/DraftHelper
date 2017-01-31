@@ -9,6 +9,9 @@
 		'@angular':								'node_modules/@angular',
 		'angular2-in-memory-web-api':		 	'node_modules/angular2-in-memory-web-api',
 		'rxjs':									'node_modules/rxjs',
+		'rxjs/add/observable/*': 				'node_modules/rxjs/add/observable/*.js',
+        'rxjs/add/operator/*': 					'node_modules/rxjs/add/operator/*.js',
+        'rxjs/*': 								'node_modules/rxjs/*.js',
 		// ng2-bootstrap
 		'moment':								'node_modules/moment',
 		'ng2-bootstrap':						'node_modules/ng2-bootstrap',
