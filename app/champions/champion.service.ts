@@ -21,23 +21,11 @@ export class ChampionService {
 	private champions: Champion[] = [];
 
 	constructor(private http: Http, private versionService: VersionService) {
-		Promise.all([this.versionService.getVersion(), this.getChampions()]).then(a => {
-			console.log(a);
-		})
-
 		this.getChampions().subscribe(champions => {
 			// Iterates through the list of champions adding them to the current object
 			Object.keys(champions).map(key => this.champions.push(champions[key]));
-			console.log(this.champions);
 			
 		});
-		/*
-		this.getChampions()
-			.then(champions => {
-				// Iterates through the list of champions adding them to the current object
-			});
-		*/
-		// TODO: trocar a versão do championsurl
 	}
 
 	getChampions(): Observable<Champion[]> {
