@@ -40,4 +40,4 @@ typings
 data/
 
 # Statistics
-tools/crawler/stats/
+server/tools/crawler/stats/
