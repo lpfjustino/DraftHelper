@@ -3,6 +3,7 @@ import { Component, OnInit } 		from '@angular/core';
 
 import { Champion } 				from '../champions/champion';
 import { ChampionService } 			from '../champions/champion.service';
+import { VersionService }			from '../services/version.service'
 
 import { ChampionListComponent }	from '../champions/champion-list.component';
 
@@ -30,7 +31,10 @@ export class CurrentDraftComponent implements OnInit {
 	currentVersion: string = "";
 	champImgBaseURL: string = "";
 
-	constructor(private championService: ChampionService, private draftService: DraftService) {
+	constructor(
+		private championService: ChampionService,
+		private draftService: DraftService,
+		private versionService: VersionService) {
 		this.champions = [];
 		this.currentState = this.states.T1B1;
 		
@@ -41,18 +45,17 @@ export class CurrentDraftComponent implements OnInit {
 	ngOnInit(): void {
 		// Iterates through the list of champions adding them to the current object
 		this.championService.getChampions()
-			.then(champions => {
+			.subscribe(champions => {
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			});
 
 		// Gathers from champions .json the current version
-		this.championService.getVersion()
-							.then(ver => {
+		this.versionService.getVersion()
+							.subscribe(ver => {
 								this.currentVersion = ver;
 								this.champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/"
 									+ this.currentVersion +"/img/champion/";
 							})
-							.catch(err => console.log(err));
 	};
 
 	private getStateFromDefinition(team : number, nr: number, isBan: boolean) {

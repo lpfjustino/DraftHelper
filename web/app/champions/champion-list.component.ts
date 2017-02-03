@@ -2,6 +2,7 @@ import { Component, OnInit } 		from '@angular/core';
 
 import { Champion } 				from './champion';
 import { ChampionService } 			from './champion.service';
+import { VersionService }			from '../services/version.service'
 
 import { DraftService }				from '../draft/draft.service';
 
@@ -19,25 +20,26 @@ export class ChampionListComponent implements OnInit {
 	currentVersion: string = "";
 	champImgBaseURL: string = "";
 
-	constructor(private championService: ChampionService, private draftService : DraftService) {
+	constructor(
+		private championService: ChampionService,
+		private draftService : DraftService,
+		private versionService: VersionService) {
 		// Gathers from champions .json the current version
-		this.championService.getVersion()
-					.then(ver => {
+		this.versionService.getVersion()
+					.subscribe(ver => {
 						this.currentVersion = ver;
 						this.champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/"
 							+ this.currentVersion +"/img/champion/";
 					})
-					.catch(err => console.log(err));
 	}
 
 	ngOnInit(): void {
 		// Iterates through the list of champions adding them to the current object
 		this.championService.getChampions()
-			.then(champions => {
+			.subscribe(champions => {
 				// Iterates through the list of champions adding them to the current object
 				Object.keys(champions).map(key => this.champions.push(champions[key]))
 			})
-			.catch(err => console.log(err));
 	};
 
 	selected(id: number) {

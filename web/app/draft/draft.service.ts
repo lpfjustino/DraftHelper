@@ -17,9 +17,6 @@ export class DraftService {
 	draftChange: Subject<Dictionary> = new Subject<Dictionary>();
 	draft: Dictionary;
 
-	currentVersion: string = "";
-	champImgBaseURL: string = "";
-
 	constructor(private championService: ChampionService) {
 		this.draft = {};
 		this.champions = [];
@@ -29,15 +26,6 @@ export class DraftService {
 		for(var state in this.states) {
 			this.draft[state] = undefined;
 		}
-
-		// Gathers from champions .json the current version
-		this.championService.getVersion()
-							.then(ver => {
-								this.currentVersion = ver;
-								this.champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/"
-									+ this.currentVersion +"/img/champion/";
-							})
-							.catch(err => console.log(err)); 
 	}
 
 	getCurrentDraft(): Dictionary {
@@ -52,7 +40,6 @@ export class DraftService {
 	championSelected(champ : Champion): void {
 		this.draft[this.currentState] = champ;
 		this.draftChange.next(this.draft);
-		console.log(this.draft);
 	}
 
 	stateChanged(state: DraftState) {

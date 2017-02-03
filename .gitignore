@@ -35,3 +35,9 @@ web/app/**/*.js
 web/app/**/*.js.map
 server/data
 typings
+
+# Mongo content
+data/
+
+# Statistics
+tools/crawler/stats/
