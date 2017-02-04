@@ -8,7 +8,8 @@ import { MaterialModule } 					from '@angular/material';
 import { AppComponent } 					from './app.component';
 import { CurrentDraftComponent } 			from './draft/current-draft.component';
 import { ChampionListComponent } 			from './champions/champion-list.component';
-import { AuthComponent } 					from './auth/auth.component';
+import { HomePageComponent } 				from './walkthrough/home-page.component';
+//import { AuthComponent } 					from './auth/auth.component';
 
 import { ChampionService }					from './champions/champion.service';
 import { DraftService }						from './draft/draft.service';
@@ -20,14 +21,14 @@ import { fakeBackendProvider } 				from './auth/_helpers/index';
 import { MockBackend, MockConnection } 		from '@angular/http/testing';
 import { BaseRequestOptions } 				from '@angular/http';
 
-import { routing }        					from './auth/app.routing';
+import { routing }        					from './app.routing';
 
 import { MyAlertComponent } 				from './auth/_directives/index';
 import { AuthGuard } 						from './auth/_guards/index';
 import { AlertService,
 	AuthenticationService,
 	UserService } 							from './auth/_services/index';
-import { HomeComponent } 					from './auth/home/index';
+import { SummonerInfoComponent } 			from './auth/summoner/index';
 import { LoginComponent } 					from './auth/login/index';
 import { RegisterComponent } 				from './auth/register/index';
 
@@ -39,9 +40,10 @@ import { RegisterComponent } 				from './auth/register/index';
 		CurrentDraftComponent,
 		ChampionListComponent,
 		// Authentication components
-		AuthComponent,
+		//AuthComponent,
 		MyAlertComponent,
-        HomeComponent,
+        SummonerInfoComponent,
+        HomePageComponent,
         LoginComponent,
         RegisterComponent
 	],
@@ -66,10 +68,10 @@ import { RegisterComponent } 				from './auth/register/index';
         UserService,
 
         // Providers used to create fake backend
-        /*
         fakeBackendProvider,
         MockBackend,
         BaseRequestOptions,
+        /*
 		*/
 	],
 	bootstrap: [ AppComponent ]

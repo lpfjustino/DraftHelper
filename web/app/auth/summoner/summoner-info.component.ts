@@ -1,15 +1,15 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit }        from '@angular/core';
 
-import { User } from '../_models/index';
-import { UserService } from '../_services/index';
+import { User }                     from '../_models/index';
+import { UserService }              from '../_services/index';
 
 @Component({
     moduleId: module.id,
-    templateUrl: 'home.component.html',
-    styleUrls: [ 'home.component.css' ]
+    templateUrl: 'summoner-info.component.html',
+    styleUrls: [ 'summoner-info.component.css' ]
 })
 
-export class HomeComponent implements OnInit {
+export class SummonerInfoComponent implements OnInit {
     currentUser: User;
     users: User[] = [];
 

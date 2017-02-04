@@ -1,0 +1,21 @@
+{
+	"folders":
+	[
+		{
+			"path": ".",
+			"translate_tabs_to_spaces": false,
+			"detect_indentation": true
+
+		},
+		{
+			"path": "web",
+			"folder_exclude_patterns": ["node_modules"],
+			"file_exclude_patterns": ["*.js", "*.map", "*.ico"]
+		},
+		{
+			"path": "server",
+			"folder_exclude_patterns": ["node_modules"],
+			"file_exclude_patterns": []
+		}
+	]
+}
