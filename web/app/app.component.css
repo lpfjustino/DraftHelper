@@ -10,6 +10,10 @@ md-sidenav {
   width: 25%;
 }
 
+ul.nav.navbar-nav.menu {
+  margin: 0px;
+}
+
 /*
     M2 DEMO
 */
@@ -18,7 +22,7 @@ md-sidenav-layout.m2app-dark {
 }
 
 .app-content {
-  padding: 20px;
+  margin: 20px;
 }
 
 .app-content md-card {

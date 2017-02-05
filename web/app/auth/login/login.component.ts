@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
         this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'auth/summoner';
     }
 
     login() {
@@ -32,11 +32,15 @@ export class LoginComponent implements OnInit {
         this.authenticationService.login(this.model.username, this.model.password)
             .subscribe(
                 data => {
-                    this.router.navigate([this.returnUrl]);
+                    this.router.navigate([{ outlets: { authOutlet: this.returnUrl }}]);
                 },
                 error => {
                     this.alertService.error(error);
                     this.loading = false;
                 });
+    }
+
+    onRegister() {
+        this.router.navigate([{ outlets: { authOutlet: 'auth/register' }}]);
     }
 }

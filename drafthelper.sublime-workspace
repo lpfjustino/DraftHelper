@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"substri",
+				"substring	method"
+			],
+			[
+				"sub",
+				"substr	method"
+			],
+			[
+				"pa",
+				"path	property"
+			],
+			[
+				"f",
+				"forEach	method"
+			],
+			[
 				"so",
 				"sort	method"
 			],
@@ -136,43 +152,37 @@
 	"buffers":
 	[
 		{
-			"file": "web/app/app.component.html",
-			"settings":
-			{
-				"buffer_size": 4533,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "web/app/auth/login/login.component.ts",
 			"settings":
 			{
-				"buffer_size": 1228,
+				"buffer_size": 1256,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "web/app/walkthrough/home-page.component.ts",
+			"file": "web/app/auth/login/login.component.html",
 			"settings":
 			{
-				"buffer_size": 242,
+				"buffer_size": 2148,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "web/app/walkthrough/home-page.component.html",
+			"file": "web/app/auth/register/register.component.ts",
 			"settings":
 			{
-				"buffer_size": 82,
+				"buffer_size": 926,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "web/app/app.routing.ts",
+			"contents": "Searching 75 files for \"navigate([\"\n\nC:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth\\_guards\\auth.guard.js:\n   22          }\n   23          // not logged in so redirect to login page with the return url\n   24:         //this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});\n   25          var previousPrimaryRoute = state.url.split('(')[0];\n   26          this.route.url.subscribe(function (e) { return console.log(e); });\n   27          console.log(previousPrimaryRoute);\n   28:         this.router.navigate([{ outlets: { authOutlet: 'auth/login' } }]);\n   29          return false;\n   30      };\n\nC:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth\\_guards\\auth.guard.ts:\n   15  \n   16          // not logged in so redirect to login page with the return url\n   17:         //this.router.navigate(['/login'], { queryParams: { returnUrl: state.url }});\n   18          let previousPrimaryRoute = state.url.split('(')[0];\n   19          this.route.url.subscribe(e => console.log(e));\n   20          console.log(previousPrimaryRoute);\n   21:         this.router.navigate([{ outlets: { authOutlet: 'auth/login' }}]);\n   22          return false;\n   23      }\n\nC:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth\\login\\login.component.js:\n   32          this.authenticationService.login(this.model.username, this.model.password)\n   33              .subscribe(function (data) {\n   34:             _this.router.navigate([_this.returnUrl]);\n   35          }, function (error) {\n   36              _this.alertService.error(error);\n\nC:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth\\login\\login.component.ts:\n   33              .subscribe(\n   34                  data => {\n   35:                     this.router.navigate([this.returnUrl]);\n   36                  },\n   37                  error => {\n\nC:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth\\register\\register.component.js:\n   26              .subscribe(function (data) {\n   27              _this.alertService.success('Registration successful', true);\n   28:             _this.router.navigate(['/login']);\n   29          }, function (error) {\n   30              _this.alertService.error(error);\n\nC:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth\\register\\register.component.ts:\n   24                  data => {\n   25                      this.alertService.success('Registration successful', true);\n   26:                     this.router.navigate(['/login']);\n   27                  },\n   28                  error => {\n\n8 matches across 6 files\n",
 			"settings":
 			{
-				"buffer_size": 867,
-				"line_ending": "Windows"
+				"buffer_size": 2580,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
 			}
 		}
 	],
@@ -216,18 +226,37 @@
 	},
 	"expanded_folders":
 	[
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/_guards",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/login"
 	],
 	"file_history":
 	[
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.component.html",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/register/register.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.routing.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/_guards/auth.guard.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.component.html",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/proxy-route.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth-routing.module.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.module.ts",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/summoner/summoner-info.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.routing.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/index.html",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app-routing.module.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.component.css",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.component.css",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/walkthrough/home-page.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/walkthrough/home-page.component.html",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/summoner/index.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/summoner-info.component.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/summoner-info.component.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/home.component.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/home.component.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/drafthelper.sublime-project",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/_services/user.service.ts",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.component.html",
 		"/C/Users/LuisPaulo/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.component.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/app.routing.ts",
@@ -332,21 +361,7 @@
 		"/C/Users/LuisPaulo/Desktop/lastrig",
 		"/C/Users/LuisPaulo/PycharmProjects/Trabalho 2/out.petster-friendships-hamster-uniq",
 		"/C/Users/LuisPaulo/PycharmProjects/Trabalho 2/out.topology",
-		"/C/Users/LuisPaulo/Downloads/prime.cpp",
-		"/C/Users/LuisPaulo/Downloads/PrimesOMP.c",
-		"/E/Documentos/USP/4º Semestre/AAA/Projeto 1/MapColouring/src/backtracking/Main.java",
-		"/C/Users/LUISPA~1/AppData/Local/Temp/Rar$DRa0.991/pathfinding/NodeFactory.java",
-		"/C/Users/LuisPaulo/Downloads/trab3-consulta2.sql",
-		"/C/Users/LuisPaulo/Desktop/criacao.sql",
-		"/C/Users/LuisPaulo/Desktop/t2.sql",
-		"/C/Users/LUISPA~1/AppData/Local/Temp/Rar$DRa0.991/pathfinding/AbstractNode.java",
-		"/C/Users/LUISPA~1/AppData/Local/Temp/Rar$DRa0.991/pathfinding/ExampleNode.java",
-		"/C/Users/LUISPA~1/AppData/Local/Temp/Rar$DRa0.991/pathfinding/ExampleUsage.java",
-		"/C/Users/LUISPA~1/AppData/Local/Temp/Rar$DRa0.991/pathfinding/Map.java",
-		"/C/Users/LUISPA~1/AppData/Local/Temp/Rar$DRa0.991/pathfinding/ExampleFactory.java",
-		"/C/Users/LuisPaulo/Desktop/t2",
-		"/C/Users/LuisPaulo/Desktop/trabalho2_TCLF-master/Compiler/Compiler_BC.java",
-		"/C/Users/LuisPaulo/Desktop/trabalho2_TCLF-master/Compiler/Compiler_BC.jj"
+		"/C/Users/LuisPaulo/Downloads/prime.cpp"
 	],
 	"find":
 	{
@@ -357,6 +372,9 @@
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper",
 			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web",
 			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper",
 			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\app\\champions",
@@ -368,6 +386,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"regis",
+			"navigate([",
+			", outlet: 'authOutlet'",
+			"SummonerInfoComponent",
+			"from",
+			"appRoutes",
+			"auth/",
+			"/home",
+			"home",
 			"HomeComponent",
 			"home.component",
 			"current-draft",
@@ -486,21 +513,12 @@
 			" ",
 			"\\t",
 			"\\n",
-			"G.add_node",
-			"Capital",
-			"descTipoFu",
-			"FROM",
-			"tituloepse",
-			"CPF_ALREADY_EXISTS",
-			"open",
-			"string",
-			"Palavras Reservadas",
-			"analisador_sintatico"
+			"G.add_node"
 		],
 		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
 			"reevaluate",
@@ -533,67 +551,24 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "web/app/app.component.html",
+					"file": "web/app/auth/login/login.component.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4533,
+						"buffer_size": 1256,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								893,
-								893
-							],
-							[
-								1003,
-								1003
-							],
-							[
-								1119,
-								1119
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							}
-						},
-						"translation.x": 0.0,
-						"translation.y": 39.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "web/app/auth/login/login.component.ts",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1228,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								361,
-								370
+								1081,
+								1081
 							]
 						],
 						"settings":
@@ -604,110 +579,157 @@
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "web/app/walkthrough/home-page.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 242,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								203,
-								203
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 96.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "web/app/walkthrough/home-page.component.html",
+					"buffer": 1,
+					"file": "web/app/auth/login/login.component.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 82,
+						"buffer_size": 2148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								55,
-								55
+								2065,
+								2065
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							}
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "web/app/auth/register/register.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 926,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								745,
+								745
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true,
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 12.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "web/app/app.routing.ts",
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 867,
+						"buffer_size": 2580,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										245,
+										255
+									],
+									[
+										535,
+										545
+									],
+									[
+										833,
+										843
+									],
+									[
+										1103,
+										1113
+									],
+									[
+										1457,
+										1467
+									],
+									[
+										1766,
+										1776
+									],
+									[
+										2108,
+										2118
+									],
+									[
+										2472,
+										2482
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								128,
-								128
+								2485,
+								2485
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
 							"typescript_plugin_format_options":
 							{
 								"convertTabsToSpaces": false,
 								"indentSize": 4,
 								"tabSize": 4
-							},
-							"use_tab_stops": false
+							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 117.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
