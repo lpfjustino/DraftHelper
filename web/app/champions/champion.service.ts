@@ -21,11 +21,6 @@ export class ChampionService {
 	private champions: Champion[] = [];
 
 	constructor(private http: Http, private versionService: VersionService) {
-		this.getChampions().subscribe(champions => {
-			// Iterates through the list of champions adding them to the current object
-			Object.keys(champions).map(key => this.champions.push(champions[key]));
-			
-		});
 	}
 
 	getChampions(): Observable<Champion[]> {

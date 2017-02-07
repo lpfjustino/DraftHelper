@@ -24,16 +24,17 @@ export class ChampionListComponent implements OnInit {
 		private championService: ChampionService,
 		private draftService : DraftService,
 		private versionService: VersionService) {
+	}
+
+	ngOnInit(): void {
 		// Gathers from champions .json the current version
 		this.versionService.getVersion()
 					.subscribe(ver => {
 						this.currentVersion = ver;
 						this.champImgBaseURL = "http://ddragon.leagueoflegends.com/cdn/"
 							+ this.currentVersion +"/img/champion/";
-					})
-	}
-
-	ngOnInit(): void {
+					});
+					
 		// Iterates through the list of champions adding them to the current object
 		this.championService.getChampions()
 			.subscribe(champions => {

@@ -15,6 +15,7 @@ import { HomePageComponent } 					from './walkthrough/home-page.component';
 import { ChampionService }						from './champions/champion.service';
 import { DraftService }							from './draft/draft.service';
 import { VersionService }						from './services/version.service';
+import { StatisticsService }					from './engine/services/statistics.service';
 
 // Authentication imports
 
@@ -38,8 +39,6 @@ import { SummonerInfoComponent } 				from './auth/summoner/index';
 import { LoginComponent } 						from './auth/login/index';
 import { RegisterComponent } 					from './auth/register/index';
 
-import { ProxyRouteComponent }		from "./auth/proxy-route.component"
-
 @NgModule({
 	declarations: [
 		AppComponent,
@@ -53,7 +52,6 @@ import { ProxyRouteComponent }		from "./auth/proxy-route.component"
         LoginComponent,
         RegisterComponent,
         AuthComponent,
-        ProxyRouteComponent
 	],
 	imports: [
 		BrowserModule,
@@ -69,6 +67,7 @@ import { ProxyRouteComponent }		from "./auth/proxy-route.component"
 		ChampionService,
 		DraftService,
 		VersionService,
+		StatisticsService
 		
         /*
 		// Authentication providers

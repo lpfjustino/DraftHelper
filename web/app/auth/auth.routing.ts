@@ -10,8 +10,6 @@ import { AuthGuard } 				from './_guards/index';
 
 import { HomePageComponent}			from '../walkthrough/home-page.component';
 
-import { ProxyRouteComponent }		from "./proxy-route.component"
-
 const authRoutes: Routes = [
 	{ 
 		path: 'auth',

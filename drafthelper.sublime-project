@@ -2,20 +2,17 @@
 	"folders":
 	[
 		{
-			"path": ".",
-			"translate_tabs_to_spaces": false,
-			"detect_indentation": true
-
+			"path": "."
 		},
 		{
-			"path": "web",
-			"folder_exclude_patterns": ["node_modules"],
-			"file_exclude_patterns": ["*.js", "*.map", "*.ico"]
+			"folder_exclude_patterns":
+			[
+				"node_modules"
+			],
+			"path": "server"
 		},
 		{
-			"path": "server",
-			"folder_exclude_patterns": ["node_modules"],
-			"file_exclude_patterns": []
+			"path": "web"
 		}
 	]
 }
