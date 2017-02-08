@@ -15,10 +15,7 @@ export class StatisticsService {
 
 	constructor(private http: Http) { 
 		this.getChampions()
-			.then(champions => {
-				// Iterates through the list of champions adding them to the current object
-				Object.keys(champions).map(key => this.champions.push(champions[key]))
-			});
+			.then(champions => this.champions = champions);
 		// TODO: trocar a versão do championsurl
 		//this.crawl();
 	}

@@ -27,7 +27,6 @@ export class ChampionListComponent implements OnInit {
 	}
 
 	ngOnInit(): void {
-		// Gathers from champions .json the current version
 		this.versionService.getVersion()
 					.subscribe(ver => {
 						this.currentVersion = ver;
@@ -35,15 +34,11 @@ export class ChampionListComponent implements OnInit {
 							+ this.currentVersion +"/img/champion/";
 					});
 					
-		// Iterates through the list of champions adding them to the current object
 		this.championService.getChampions()
-			.subscribe(champions => {
-				// Iterates through the list of champions adding them to the current object
-				Object.keys(champions).map(key => this.champions.push(champions[key]))
-			})
+			.subscribe(champions => this.champions = champions);
 	};
 
-	selected(id: number) {
+	selected(id: string) {
 		this.draftService.selected(id);
 	}
 }

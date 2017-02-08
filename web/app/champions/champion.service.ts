@@ -5,10 +5,9 @@ import { Champion }			from './champion';
 
 import { VersionService }	from '../services/version.service';
 
-//import 'rxjs/add/operator/map';
-
 import 'rxjs/Rx';
-import { Observable } 		from "rxjs/Observable";
+import { Observable } 				from "rxjs/Observable";
+import { Observer } 				from "rxjs/Observer";
 
 import { URLSearchParams } 	from '@angular/http';
 
@@ -20,22 +19,31 @@ export class ChampionService {
 
 	private champions: Champion[] = [];
 
+	private championsObserver: Observer<Champion[]>;
+
 	constructor(private http: Http, private versionService: VersionService) {
 	}
 
 	getChampions(): Observable<Champion[]> {
-		return this.versionService.getVersion()
-							.map(ver => {
-								this.currentVersion = ver;
-								return this.currentVersion
+		this.versionService
+			.getVersion()
+			.subscribe(ver => {
+				this.currentVersion = ver;
+				this.championsUrl = 'http://ddragon.leagueoflegends.com/cdn/'
+									+ ver
+									+ '/data/en_US/champion.json';
+				this.http.get(this.championsUrl)
+							.subscribe(response => {
+								var champsObject = response.json().data;
+
+								// Convert the incoming Object to Array
+								Object.keys(champsObject).map(key => this.champions.push(champsObject[key]));
+
+								this.championsObserver.next(this.champions);
 							})
-							.flatMap(ver => {
-								this.championsUrl = 'http://ddragon.leagueoflegends.com/cdn/'
-													+ ver
-													+ '/data/en_US/champion.json';
-								return this.http.get(this.championsUrl)
-											.map(response => response.json().data as Champion[])
-							})
+			});
+
+		return new Observable<Champion[]>(observer => this.championsObserver = observer);
 	}
 	
 	private handleError(error: any): Observable<any> {
@@ -43,7 +51,7 @@ export class ChampionService {
 		return Observable.throw(error.message || error);
 	}
 
-	getChampion(id: number) : Champion {
+	getChampion(id: string) : Champion {
 		return this.champions.filter(champ => champ.id == id)[0];
 	}
 }

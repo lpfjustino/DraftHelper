@@ -1,18 +1,18 @@
 {
 	"folders":
-	[
+	[	
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns": ["server", "web"]
 		},
 		{
-			"folder_exclude_patterns":
-			[
-				"node_modules"
-			],
-			"path": "server"
+			"path": "server",
+			"folder_exclude_patterns": ["node_modules"]
 		},
 		{
-			"path": "web"
+			"path": "web",
+			"folder_exclude_patterns": ["node_modules", "resources"],
+			"file_exclude_patterns": ["*.js", "*.js.map", "*.ico", "*.lock"]
 		}
 	]
 }

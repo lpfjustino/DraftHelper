@@ -14,9 +14,6 @@ export class VersionService {
 	private currentVersion: string = "";
 
 	constructor(private http: Http) {
-		// Gathers from static API the current version
-		this.getVersion()
-			.subscribe(ver => this.currentVersion = ver);
 	}
 
 	private handleError(error: any): Observable<any> {

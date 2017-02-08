@@ -32,7 +32,7 @@ export class DraftService {
 		return this.draft;
 	}
 
-	selected(id: number): void {
+	selected(id: string): void {
 		var champ = this.championService.getChampion(id);
 		this.championSelected(champ);
 	}

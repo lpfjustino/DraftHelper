@@ -4,7 +4,7 @@ import { ChampionStats }	from "./champion-stats"
 
 export class Champion {
 	version : string; 
-	id : number;
+	id : string;
 	key : number;
 	name : string;
 	title : string;
