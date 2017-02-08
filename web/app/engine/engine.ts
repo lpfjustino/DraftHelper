@@ -43,8 +43,8 @@ export class BaseChoice implements PickAppraiser {
 				this.chosenObserver.next(chosen);
 			});
 
-		let obs = new Observable<PickQuality[]>(observer => this.chosenObserver = observer);
-		return obs;
+			let obs = new Observable<PickQuality[]>((observer => this.chosenObserver = observer ));
+			return obs;
 	}
 
 	reevaluate(options: PickQuality[]): void {

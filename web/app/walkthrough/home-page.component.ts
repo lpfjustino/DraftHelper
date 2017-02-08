@@ -23,8 +23,9 @@ export class HomePageComponent {
 		//console.log(test);
 		//console.log(test2);
 		
-		test.choose().subscribe(a => console.log(a) );
-		test.choose(5).subscribe(a => console.log(a) );
+		test.choose().subscribe(a => console.log(a));
+		test.choose(5).subscribe(b => console.log(b));
+		test.choose(15).subscribe(c => console.log(c));
 		//console.log(test2.choose());
 		//console.log(test2.choose(5));
 	}
