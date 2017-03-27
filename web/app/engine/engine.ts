@@ -2,6 +2,7 @@ import 'rxjs/Rx';
 import { Observable } 				from "rxjs/Observable";
 import { Observer } 				from "rxjs/Observer";
 import { BehaviorSubject } 			from "rxjs/BehaviorSubject";
+import { Subject } 					from "rxjs/Subject";
 
 import { Champion } 				from '../champions/champion';
 
@@ -20,8 +21,10 @@ export class BaseChoice implements PickAppraiser {
 	weight = 0;
 	options = new Array<PickQuality>();
 
-	constructor(private championService: ChampionService) {}
+	private optionsSubject = new Subject<PickQuality[]>();
 
+	constructor(private championService: ChampionService) {}
+/*
 	getOptions(): Observable<PickQuality[]> {
 		if(this.options.length == 0) {
 			var optionsObserver: Observer<PickQuality[]>;
@@ -36,25 +39,39 @@ export class BaseChoice implements PickAppraiser {
 			return Observable.of(this.options);
 		}
 	}
+*/
+
+	getOptions(): Observable<PickQuality[]> {
+		this.championService.getChampions()
+			.subscribe(champions => {
+				champions.forEach(champion => this.options.push(new PickQuality(champion, 0)));
+				//this._optionsObserver.next(this.options);
+				this.optionsSubject.next(this.options);
+			});
+		//return this.optionsObservable;
+		return this.optionsSubject.asObservable();
+	}
+
 
 	choose(n?: number): Observable<PickQuality[]> {
-		var chosenObserver: Observer<PickQuality[]>;
-		
+		var chooseSubject = new Subject<PickQuality[]>();
+
 		this.getOptions().subscribe(options => {
-				alert(n);
 				this.reevaluate();
-		
+
 				var sorted = options.sort((a, b) => b.score - a.score);
 				var chosen: PickQuality[];
 
 				if(n) chosen = sorted.slice(0, n);
 				else chosen = sorted.slice(0, 1);
 
-				chosenObserver.next(chosen);
+				//this._chosenObserver.next(chosen);
+				chooseSubject.next(chosen);
+				chooseSubject.complete();
 		});
 
-		let obs = new Observable<PickQuality[]>(observer => chosenObserver = observer);
-		return obs;
+		//return this.chosenObservable;
+		return chooseSubject.asObservable()
 	}
 
 	reevaluate(): void {

@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"_",
+				"_optionsObserver	property"
+			],
+			[
+				"option",
+				"optionsObservable	property"
+			],
+			[
+				"cho",
+				"chosenObservable	property"
+			],
+			[
+				"o",
+				"obs	property"
+			],
+			[
+				"Obser",
+				"Observable	alias"
+			],
+			[
+				"Observab",
+				"Observable	alias"
+			],
+			[
+				"champ",
+				"champions	property"
+			],
+			[
+				"chosenOb",
+				"chosenObserver	property"
+			],
+			[
+				"s",
+				"score	property"
+			],
+			[
+				"cha",
+				"champions	property"
+			],
+			[
+				"co",
+				"copyWithin	method"
+			],
+			[
+				"optio",
+				"options	property"
+			],
+			[
+				"cons",
+				"console	var"
+			],
+			[
 				"substri",
 				"substring	method"
 			],
@@ -46,10 +98,6 @@
 			[
 				"set",
 				"setFields	method"
-			],
-			[
-				"champ",
-				"championsUrl	property"
 			],
 			[
 				"versio",
@@ -152,10 +200,18 @@
 	"buffers":
 	[
 		{
-			"file": "web/app/app.module.ts",
+			"file": "web/app/engine/engine.ts",
 			"settings":
 			{
-				"buffer_size": 2646,
+				"buffer_size": 3446,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "web/app/walkthrough/home-page.component.ts",
+			"settings":
+			{
+				"buffer_size": 952,
 				"line_ending": "Windows"
 			}
 		}
@@ -202,10 +258,26 @@
 	[
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth"
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/champions"
 	],
 	"file_history":
 	[
+		"/C/Users/LuisPaulo/PycharmProjects/PDI_T1/T1.py",
+		"/C/Users/LuisPaulo/AppData/Local/Temp/Rar$DIa0.541/readimage.py",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/draft/current-draft.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/champions/champion-list.component.html",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/champions/champion.service.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/draft/draft.service.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/champions/champion-list.component.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/champions/champion.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/drafthelper.sublime-project",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/engine/services/statistics.service.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/champions/champion-list.component.js",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/engine/services/winrate.service.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/services/version.service.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/walkthrough/home-page.component.html",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth-routing.module.ts",
+		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.module.ts",
 		"/E/Jogos/League of Legends/RADS/projects/league_client/releases/0.0.0.49/deploy/system.yaml",
 		"/E/Jogos/League of Legends/RADS/projects/league_client/releases/0.0.0.44/deploy/system.yaml",
 		"/E/Jogos/League of Legends/RADS/projects/league_client/releases/0.0.0.26/deploy/system.yaml",
@@ -220,8 +292,6 @@
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/_guards/auth.guard.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.component.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/proxy-route.component.ts",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth-routing.module.ts",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.module.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.routing.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/index.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app-routing.module.ts",
@@ -229,13 +299,11 @@
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/auth.component.css",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.component.css",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/walkthrough/home-page.component.ts",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/walkthrough/home-page.component.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/summoner/index.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/summoner-info.component.ts",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/summoner-info.component.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/home.component.html",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/home/home.component.ts",
-		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/drafthelper.sublime-project",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/auth/_services/user.service.ts",
 		"/C/Users/LuisPaulo/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/C/Users/LuisPaulo/Documents/GitHub/DraftHelper/web/app/app.component.ts",
@@ -321,29 +389,23 @@
 		"/E/Documentos/USP/3º Semestre/Org Comp/Trabalhos/SpaceInvaders.asm",
 		"/E/Documentos/USP/1º Semestre/ICC/Trabalho 2/Untitled1.c",
 		"/E/Documentos/VMs/PShare/t2Final/out.opsahl-usairport",
-		"/E/Documentos/USP/2º Semestre/ICC2/Trabalho 8/Makefile",
-		"/C/Users/LuisPaulo/AppData/Local/Temp/Rar$DIa0.353/Makefile",
-		"/C/Users/LuisPaulo/AppData/Local/Temp/Rar$DIa0.916/t2.py",
-		"/C/Users/LuisPaulo/Downloads/t2.py",
-		"/E/Documentos/VMs/PShare/t2Final/out.arenas-email",
-		"/E/Documentos/VMs/PShare/Trabalho 2/t2.py",
-		"/E/Documentos/USP/6º Semestre/Trabalhos/Trabalho 1/t1.py",
-		"/C/Users/LuisPaulo/Downloads/p2 (1).py",
-		"/E/Documentos/VMs/PShare/Boss/p2.py",
-		"/E/Documentos/USP/3º Semestre/POO/Trabalho 4/SugarWood Supermarket/src/sugarwood/supermarket/gui/HomeScreen.fxml",
-		"/E/Documentos/USP/3º Semestre/POO/Trabalho 4/SugarWood Supermarket/src/sugarwood/supermarket/gui/Stock.fxml",
-		"/C/Users/LuisPaulo/Downloads/queriesT2.sql",
-		"/C/Users/LuisPaulo/Downloads/criacao.sql"
+		"/E/Documentos/USP/2º Semestre/ICC2/Trabalho 8/Makefile"
 	],
 	"find":
 	{
-		"height": 42.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\champions",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\champions",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app",
+			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web",
 			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web\\app\\auth",
 			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper\\web",
 			"C:\\Users\\LuisPaulo\\Documents\\GitHub\\DraftHelper",
@@ -358,6 +420,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"chosen",
+			"next",
+			"// Gathers from",
+			"//Gathers from",
+			"Gathers from",
+			"Gathers from champion",
+			"Gathers from champion .json",
+			"getchampions(",
+			"Object.keys",
+			"PickQuality",
+			"_chosen",
+			"private ",
+			");",
+			"service.ts",
+			"private",
+			"constructor(pickAppraiser: PickAppraiser,\n		weight: number,\n		statsService: StatisticsService)",
+			"constructor",
+			"ngOnInit",
+			"sort",
+			"from",
+			".score",
+			"choose",
+			"weight: number,",
+			"constructor(weight: number,\n		pickAppraiser: PickAppraiser,\n		statsService: StatisticsService) {",
+			"reevaluate(options:",
+			"reevaluate(",
+			"reevaluate",
+			"console.log",
 			"    available_locales:\n    - pt_BR",
 			"- pt_BR",
 			"available",
@@ -457,42 +547,17 @@
 			"\\label{fig:",
 			"kknnk",
 			"eigenvector_versus_betweenness",
-			"Internet_",
-			"t[Base ",
-			"Internet_",
-			"subfloat[Base ",
-			"Base 1",
-			"b1",
-			"Internet",
-			"EC_",
-			"Visits",
-			"visit",
-			"r =",
-			"anos",
-			"AFTER",
-			"lim",
-			"MAX_THREADS",
-			"MAX_N",
-			"totwork",
-			"vertical",
-			"crossout",
-			"totwork",
-			"nextbase",
-			"dbg",
-			"argv",
-			"adjMat",
-			",",
-			", ",
-			",\\n",
-			",",
-			" "
+			"Internet_"
 		],
 		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"constructor(private pickAppraiser: PickAppraiser,\n		private weight: number,\n		private statsService: StatisticsService)",
+			"private reevaluate(",
+			"private reevaluate",
 			"    available_locales:\n    - pt_BR\\n    - en_US",
 			"    available_locales:\n    - pt_BR\\n    -enUS",
 			"reevaluate",
@@ -530,31 +595,73 @@
 			[
 				{
 					"buffer": 0,
-					"file": "web/app/app.module.ts",
+					"file": "web/app/engine/engine.ts",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2646,
+						"buffer_size": 3446,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2057,
-								2057
+								2052,
+								2052
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
 							"use_tab_stops": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 429.0,
+						"translation.y": 616.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "web/app/walkthrough/home-page.component.ts",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 952,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								826,
+								826
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"typescript_plugin_format_options":
+							{
+								"convertTabsToSpaces": false,
+								"indentSize": 4,
+								"tabSize": 4
+							},
+							"use_tab_stops": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -562,7 +669,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -607,7 +714,7 @@
 	"project": "drafthelper.sublime-project",
 	"replace":
 	{
-		"height": 78.0
+		"height": 110.0
 	},
 	"save_all_on_build": true,
 	"select_file":
