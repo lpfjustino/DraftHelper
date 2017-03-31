@@ -17,16 +17,11 @@ export class HomePageComponent {
 	constructor(championService: ChampionService,
 		statsService: StatisticsService) {
 		var test = new BaseChoice(championService);
-		var test2 = new GlobalWinrateDecorator(test, 5, statsService);
-
-		//console.log("instance");
-		//console.log(test);
-		console.log(test2);
+		console.log(test);
+		test.choose(3).subscribe(a => a.forEach(v => console.log(v.champ.name, v.score)));
 		
-		test.choose().subscribe(a => console.log(a));
-		test.choose(5).subscribe(b => console.log(b));
-		//test.choose(50).subscribe(c => console.log(c));
-		//console.log(test2.choose());
-		//console.log(test2.choose(5));
+		var test2 = new GlobalWinrateDecorator(test, 5, statsService);
+		console.log(test2);
+		test2.choose(3).subscribe(a => a.forEach(v => console.log(v.champ.name, v.score)));
 	}
 }
