@@ -13,6 +13,7 @@ export interface PickAppraiser {
 	readonly weight: number;
 	options: PickQuality[];
 
+	getOptions(): Observable<PickQuality[]>;
 	choose(n?: number): Observable<PickQuality[]>;
 	reevaluate(): void;
 }
@@ -26,15 +27,17 @@ export class BaseChoice implements PickAppraiser {
 	constructor(private championService: ChampionService) {}
 
 	getOptions(): Observable<PickQuality[]> {
-		console.log("MY LENGTH: ", this.options.length)
 		if(this.options.length == 0) {
-			this.championService.getChampions()
-				.subscribe(champions => {
-					if(this.options.length != 0) return;
-					champions.forEach(champion => this.options.push(new PickQuality(champion, 0)));
-					this.reevaluate();
-					this.optionsSubject.next(this.options);
+			let source = this.championService.getChampions().share();
+			
+			source.subscribe(champions => {
+				if(this.options.length != 0) return; // <=== Looks bad!
+				champions.forEach(champion => {
+					this.options.push(new PickQuality(champion, 0))
 				});
+				this.reevaluate();
+				this.optionsSubject.next(this.options);
+			});
 
 			return this.optionsSubject.asObservable();
 		}
@@ -46,26 +49,21 @@ export class BaseChoice implements PickAppraiser {
 		var chooseSubject = new Subject<PickQuality[]>();
 
 		this.getOptions().subscribe(options => {
-				var chosen: PickQuality[];
-
-				//if(n) chosen = sorted.slice(0, n);
-				//else chosen = sorted.slice(0, 1);
-
-				var chosen = n ? options.slice(0,n) : options.slice(0,1);
+				var chosen: PickQuality[] = n ? options.slice(0,n) : options.slice(0,1);;
 
 				chooseSubject.next(chosen);
 				chooseSubject.complete();
 		});
 
-		//return this.chosenObservable;
 		return chooseSubject.asObservable()
 	}
 
 	reevaluate(): void {
-		console.log("penis")
 		// The base choice does not change any priorities
-		this.options.forEach(opt => {opt.score += opt.champ.stats.armor});
-		this.options.sort((a, b) => b.score - a.score);
+		this.getOptions().subscribe(options => {
+			options.forEach(opt => {opt.score += opt.champ.stats.armor});
+			options.sort((a, b) => b.score - a.score);
+		});
 	}
 }
 
@@ -80,8 +78,10 @@ abstract class ChoiceEngineDecorator implements PickAppraiser {
 		this.decoratedAppraisal = pickAppraiser;
 		this.weight = weight;
 		this.options = pickAppraiser.options;
-
-		//this.reevaluate();
+	}
+	
+	getOptions(): Observable<PickQuality[]> {
+		return this.decoratedAppraisal.getOptions();
 	}
 
 	choose(n?: number): Observable<PickQuality[]> {
@@ -106,15 +106,13 @@ export class GlobalWinrateDecorator extends ChoiceEngineDecorator {
 	}
 
 	reevaluate(): void {
-		console.log("penis grande")
 		// The base choice does not change any priorities
-		console.log(this.options)
-		//this.decoratedAppraisal.options.forEach(opt => {opt.score += opt.champ.stats.hp; console.log(opt.score, opt.champ.stats.hp, opt.champ.name)});
-		this.options.forEach(opt => {
-			opt.score += opt.champ.stats.hp; 
-			console.log(opt.score, opt.champ.stats.hp, opt.champ.name)
+		this.getOptions().subscribe(options => {
+			options.forEach(opt => {
+				opt.score += opt.champ.stats.hp; 
+				options.sort((a, b) => b.score - a.score);
+			});
 		});
-		console.log(this.options)
 	}
 }
 
