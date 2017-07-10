@@ -1,0 +1,11 @@
+<div class="container-fluid" id="champion-grid-container" *ngIf="champions">
+	<md-grid-list cols="10" id="champion-grid">
+		<md-grid-tile *ngFor="let champion of champions" (click) = "selected(champion.id)" class="champion-tile">
+			<img *ngIf="champion.image.full" src="{{champImgBaseURL + champion.image.full}}"
+			  			class="champ_tile" id="{{champion}}_tile">
+			<md-grid-tile-footer>		  			
+				{{champion.name}}
+			</md-grid-tile-footer>
+		</md-grid-tile>
+	</md-grid-list>
+</div>
