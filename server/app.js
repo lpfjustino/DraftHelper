@@ -1,5 +1,5 @@
-var express = require('express'),
-	,mongoose = require('mongoose'),
+var express = require('express')
+	,mongoose = require('mongoose')
 	,app = express();
 
 app.set('views', __dirname + '/views');

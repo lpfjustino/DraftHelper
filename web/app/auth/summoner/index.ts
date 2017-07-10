@@ -1,1 +1,0 @@
-﻿export * from './summoner-info.component';
