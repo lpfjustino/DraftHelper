@@ -28,10 +28,13 @@ build/Release
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
+web/node_modules
+server/node_modules
 
 .idea
-app/**/*.js
-app/**/*.js.map
+web/app/**/*.js
+web/app/**/*.js.map
+server/data
 typings
 
 # Mongo content
